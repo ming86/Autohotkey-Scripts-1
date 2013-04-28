@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 
 # Remove messages from a pop server
