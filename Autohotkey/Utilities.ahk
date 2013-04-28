@@ -1,59 +1,118 @@
 ﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-;#Warn  ; Enable warnings to assist with detecting common errors.
+#Warn  ; Enable warnings to assist with detecting common errors.
 #SingleInstance force
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-; --- System tray
+
+; ------------------ System Tray ------------------
 Menu, TRAY, Icon, favicon.ico ; Icon displayed in the system tray
 Menu, TRAY, Tip, Autohotkey ; text displayed when hover over the icon
+; --------------- end System Tray -----------------
 
 
-; --- Folder paths
+; ------------------ Folder paths -----------------
 DL = C:\Users\Arnaud\Downloads
 PERSO = D:\Documents\Perso
 VIDEOS = D:\Vidéos
 MUSIQUE = D:\Musique
+NAS = Z:\
+; ----------------end Folder paths ----------------
 
-; --- Strings
+
+; -------------------- Strings --------------------
 TRASH_TITLE=Corbeille
 TRASH_TEXT=Vider la corbeille ?
+; ------------------ end Strings ------------------
 
-; --- Constants
+
+; ------------------- Constants -------------------
 FIREFOX = %A_ProgramFiles% (x86)\Mozilla Firefox\FireFox.exe
 FIREFOX_WINDOW = ahk_class MozillaWindowClass
-
 MAIL = C:\Users\Arnaud\AppData\Local\Inky\inky.exe
 MAIL_WINDOW = ahk_class Inky
 MAIL_FOLDER = C:\Users\Arnaud\AppData\Local\Inky\
-
 FILEZILLA = %A_ProgramFiles% (x86)\FileZilla FTP Client\filezilla.exe --site=0NAS_int ; FileZilla with a defined profile (prefixed by "0" for custom entries)
 FILEZILLA_WINDOW = ahk_class wxWindowClassNR, FileZilla
-
 SPOTIFY = %A_AppData%\Spotify\spotify.exe
 global G_SPOTIFY_WINDOW:="ahk_class SpotifyMainWindow"
 
 
+; Read a file with strings to use with hotstrings and put it in the RESSOURCES variable.
+; Each string in this file is separated from the other via the "|" character.
+FileRead, RESSOURCES, %A_WorkingDir%\ressources.txt
 
-; ### Folders shortcuts
+; store parts of the file in TXT# variables
+Loop, parse, RESSOURCES ,|,
+{
+	TXT%A_Index% = %A_LoopField%
+}
+; free the memory occupied by the variable
+RESSOURCES:=""
+
+; ---------------- end Constants ------------------
+
+
+; ################### Hotstrings ##################
+
+; Define ending characters for hotstrings. I removed the double quote and the exclamation point.
+; default : #Hotstring EndChars -()[]{}:;'"/\,.?!`n `t
+#Hotstring EndChars -()[]{}:;'/\,.?`n `t
+
+; E-mail adresses
+::a@::
+SendInput %TXT1%
+return
+
+::v@::
+SendInput %TXT2%
+return
+
+::g@::
+SendInput %TXT3%
+return
+
+; Mail signature
+::sig!::
+SendInput %TXT4%
+Return
+
+; replace  "d  with today's date
+::"d::
+{
+FormatTime, CurrentDate,, dd/MM/yyyy
+SendInput %CurrentDate%
+return
+}
+
+; ################ end Hotstrings #################
+
+
+
+; ################### Shortcuts ###################
+
+
+; === Folders shortcuts
 ~Numpad0 & ~Numpad1::run, %DL%
 ~Numpad0 & ~Numpad2::run, %VIDEOS%
 ~Numpad0 & ~Numpad3::run, %MUSIQUE%
 ~Numpad0 & ~NumpadDot::run, %PERSO%
+~Numpad0 & ~Numpad9::run, %NAS%
 
 
-; CapsLock :: Pause (Key used for displaying Find And Run Robot)
+
+; === CapsLock :: Pause (Key used for displaying Find And Run Robot) ===
 Capslock::Send {Pause}
 
-; ² :: numpad+
+; === ² :: numpad+ ===
 SC029::NumpadAdd
 
-; numpad Enter :: Middle Click
+; === numpad Enter :: Middle Click
 NumpadEnter::MButton
 
 
 
-; Ctrl+q :: Close programs
+; === Ctrl+q :: Close programs ===
 ^q::
 {
 ; Kill Spotify, not just the window
@@ -70,7 +129,7 @@ return
 }
 
 
-; Win+t :: Empty trash, for all drives, but ask before
+; === Win+t :: Empty trash, for all drives, but ask before ===
 #t::
 {
 MsgBox, 4148, %TRASH_TITLE%, %TRASH_TEXT%
@@ -79,7 +138,7 @@ return
 }
 
 
-; ### Media Keys
+; === Media Keys ===
 ; Next
 F8::Media_Next
 ; Previous
@@ -89,7 +148,7 @@ F7::Media_Play_Pause
 
 
 
-; program shortcut function
+; === shortcut for program windows function ===
 ProgramShortcut(WinClassOrName, ProgramPath, MaxMinHide = "", WorkingDir = "")
 {
 IfWinActive %WinClassOrName%
@@ -109,16 +168,16 @@ else
 
 
 
-; F1 :: Firefox
+; === F1 :: Firefox ===
 F1::ProgramShortcut(FIREFOX_WINDOW, FIREFOX, "Max")
 
-; F10 :: Filezilla
+; === F10 :: Filezilla ===
 F10::ProgramShortcut(FILEZILLA_WINDOW, FILEZILLA, "Max")
 
-; F12 :: Mail (Inky)
+; === F12 :: Mail (Inky) ===
 F12::ProgramShortcut(MAIL_WINDOW, MAIL,, MAIL_FOLDER)
 
-; Numpad - :: Spotify
+; === Numpad - :: Spotify ===
 NumpadSub::
 {
 DetectHiddenWindows, On
@@ -128,7 +187,7 @@ return
 }
 
 
-; ### Firefox
+; ===| Firefox |===
 #IfWinActive ahk_class MozillaWindowClass
 
 	; Right+numpad0/Left+numpad0 :: Ctrl+Tab/Ctrl+Shift+Tab
@@ -142,7 +201,7 @@ return
 
 
 
-; ### Spotify
+; ===| Spotify |===
 
 ; function to send controls to Spotify, even if the window is hidden or not in focus
 SpotifyControl(key)
@@ -198,6 +257,7 @@ SpotifyControl(key)
 		NewY := Mon2Top
 		NewHeight := Mon2Height
 	}
+	WinRestore
 	WinMove, , , %NewX%, %NewY%, %NewWidth%, %NewHeight%
 	return
 	}
@@ -234,7 +294,10 @@ SpotifyControl(key)
 		NewY := Mon2Top
 		NewHeight := Mon2Height
 	}
+	WinRestore
 	WinMove, , , %NewX%, %NewY%, %NewWidth%, %NewHeight%
 	return
 	}
 #IfWinActive
+
+; ############### End Shortcuts ###################
