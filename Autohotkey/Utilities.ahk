@@ -110,7 +110,8 @@ SC029::NumpadAdd
 ; === numpad Enter :: Middle Click
 NumpadEnter::MButton
 
-
+; CCleaner (Clean and quit)
+^!w::Run, CCleaner.exe /AUTO
 
 ; === Ctrl+q :: Close programs ===
 ^q::
