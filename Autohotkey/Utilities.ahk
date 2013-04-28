@@ -90,23 +90,21 @@ F7::Media_Play_Pause
 
 
 ; program shortcut function
-ProgramShortcut(WinClassOrName, ProgramPath, WorkingDir = "", MaxMinHide = "")
+ProgramShortcut(WinClassOrName, ProgramPath, MaxMinHide = "", WorkingDir = "")
 {
-DetectHiddenWindows, On
-	IfWinActive %WinClassOrName%
-		{
-		winMinimize
-		}
-	else IfWinExist %WinClassOrName%
-		{
-		WinActivate
-		WinMaximize
-		}
-	else
-		{
-		Run %ProgramPath%, %WorkingDir%, %MaxMinHide%
-		}
-DetectHiddenWindows, Off
+IfWinActive %WinClassOrName%
+	{
+	winMinimize
+	}
+else IfWinExist %WinClassOrName%
+	{
+	WinActivate
+	WinMaximize
+	}
+else
+	{
+	Run %ProgramPath%, %WorkingDir%, %MaxMinHide%
+	}
 }
 
 
@@ -118,11 +116,16 @@ F1::ProgramShortcut(FIREFOX_WINDOW, FIREFOX, "Max")
 F10::ProgramShortcut(FILEZILLA_WINDOW, FILEZILLA, "Max")
 
 ; F12 :: Mail (Inky)
-F12::ProgramShortcut(MAIL_WINDOW, MAIL, MAIL_FOLDER, "Max")
+F12::ProgramShortcut(MAIL_WINDOW, MAIL,, MAIL_FOLDER)
 
 ; Numpad - :: Spotify
-NumpadSub::ProgramShortcut(G_SPOTIFY_WINDOW, SPOTIFY)
-
+NumpadSub::
+{
+DetectHiddenWindows, On
+ProgramShortcut(G_SPOTIFY_WINDOW, SPOTIFY)
+DetectHiddenWindows, Off
+return
+}
 
 
 ; ### Firefox
