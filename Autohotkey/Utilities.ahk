@@ -4,31 +4,38 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-; System tray
+; --- System tray
 Menu, TRAY, Icon, favicon.ico ; Icon displayed in the system tray
 Menu, TRAY, Tip, Autohotkey ; text displayed when hover over the icon
 
 
-
-; Folder paths and strings
-
+; --- Folder paths
 DL = C:\Users\Arnaud\Downloads
 PERSO = D:\Documents\Perso
 VIDEOS = D:\Vidéos
 MUSIQUE = D:\Musique
 
+; --- Strings
 TRASH_TITLE=Corbeille
 TRASH_TEXT=Vider la corbeille ?
 
-MAIL = C:\Users\Arnaud\AppData\Local\Inky\inky.exe
-MAIL_FOLDER = C:\Users\Arnaud\AppData\Local\Inky\
+; --- Constants
 FIREFOX = %A_ProgramFiles% (x86)\Mozilla Firefox\FireFox.exe
-; Launch FileZilla with a defined profile (prefixed by "0" for custom entries)
-FILEZILLA = %A_ProgramFiles% (x86)\FileZilla FTP Client\filezilla.exe --site=0NAS_int
+FIREFOX_WINDOW = ahk_class MozillaWindowClass
+
+MAIL = C:\Users\Arnaud\AppData\Local\Inky\inky.exe
+MAIL_WINDOW = ahk_class Inky
+MAIL_FOLDER = C:\Users\Arnaud\AppData\Local\Inky\
+
+FILEZILLA = %A_ProgramFiles% (x86)\FileZilla FTP Client\filezilla.exe --site=0NAS_int ; FileZilla with a defined profile (prefixed by "0" for custom entries)
+FILEZILLA_WINDOW = ahk_class wxWindowClassNR, FileZilla
+
+SPOTIFY = %A_AppData%\Spotify\spotify.exe
+global G_SPOTIFY_WINDOW:="ahk_class SpotifyMainWindow"
 
 
 
-; Folders shortcuts
+; ### Folders shortcuts
 ~Numpad0 & ~Numpad1::run, %DL%
 ~Numpad0 & ~Numpad2::run, %VIDEOS%
 ~Numpad0 & ~Numpad3::run, %MUSIQUE%
@@ -38,12 +45,19 @@ FILEZILLA = %A_ProgramFiles% (x86)\FileZilla FTP Client\filezilla.exe --site=0NA
 ; CapsLock :: Pause (Key used for displaying Find And Run Robot)
 Capslock::Send {Pause}
 
+; ² :: numpad+
+SC029::NumpadAdd
+
+; numpad Enter :: Middle Click
+NumpadEnter::MButton
+
+
 
 ; Ctrl+q :: Close programs
 ^q::
 {
 ; Kill Spotify, not just the window
-IfWinActive, ahk_class SpotifyMainWindow
+IfWinActive, %G_SPOTIFY_WINDOW%
 	{
 	Send !f
 	Send q
@@ -65,16 +79,7 @@ return
 }
 
 
-; ² :: numpad+
-SC029::NumpadAdd
-
-
-; numpad Enter :: Middle Click
-NumpadEnter::MButton
-
-
-; Media Keys
-
+; ### Media Keys
 ; Next
 F8::Media_Next
 ; Previous
@@ -83,68 +88,44 @@ F6::Media_Prev
 F7::Media_Play_Pause
 
 
-; F12 :: Mail (Inky)
-F12::
+
+; program shortcut function
+ProgramShortcut(WinClassOrName, ProgramPath, WorkingDir = "", MaxMinHide = "")
 {
-IfWinActive, ahk_class Inky
-	{
-	winMinimize
-	}
-else IfWinExist, ahk_class Inky
-	{
-	WinActivate
-	WinMaximize
-	}
-else
-	{
-	Run, %MAIL%, %MAIL_FOLDER%, Max
-	}
-return
+DetectHiddenWindows, On
+	IfWinActive %WinClassOrName%
+		{
+		winMinimize
+		}
+	else IfWinExist %WinClassOrName%
+		{
+		WinActivate
+		WinMaximize
+		}
+	else
+		{
+		Run %ProgramPath%, %WorkingDir%, %MaxMinHide%
+		}
+DetectHiddenWindows, Off
 }
 
 
-; F10 :: Filezilla
-F10::
-{
-IfWinActive, ahk_class wxWindowClassNR, FileZilla
-	{
-	winMinimize
-	}
-else IfWinExist, ahk_class wxWindowClassNR, FileZilla
-	{
-	WinActivate
-	WinMaximize
-	}
-else
-	{
-	Run %FILEZILLA%
-	}
-return
-}
-
-
-; ####################### Firefox #############################
 
 ; F1 :: Firefox
-F1::
-{
-IfWinActive, ahk_class MozillaWindowClass
-	{
-	winMinimize
-	}
-else IfWinExist, ahk_class MozillaWindowClass
-	{
-	WinActivate
-	WinMaximize
-	}
-else
-	{
-	Run %FIREFOX%
-	}
-return
-}
+F1::ProgramShortcut(FIREFOX_WINDOW, FIREFOX, "Max")
+
+; F10 :: Filezilla
+F10::ProgramShortcut(FILEZILLA_WINDOW, FILEZILLA, "Max")
+
+; F12 :: Mail (Inky)
+F12::ProgramShortcut(MAIL_WINDOW, MAIL, MAIL_FOLDER, "Max")
+
+; Numpad - :: Spotify
+NumpadSub::ProgramShortcut(G_SPOTIFY_WINDOW, SPOTIFY)
 
 
+
+; ### Firefox
 #IfWinActive ahk_class MozillaWindowClass
 
 	; Right+numpad0/Left+numpad0 :: Ctrl+Tab/Ctrl+Shift+Tab
@@ -157,34 +138,25 @@ return
 #IfWinActive
 
 
-; ######################## Spotify #############################
+
+; ### Spotify
+
+; function to send controls to Spotify, even if the window is hidden or not in focus
+SpotifyControl(key)
+{
+	DetectHiddenWindows, On 
+	ControlSend, ahk_parent, %key%, %G_SPOTIFY_WINDOW%
+	DetectHiddenWindows, Off
+}
 
 ; Ctrl+Left :: previous song
-^Left::
-{ 
-DetectHiddenWindows, On 
-ControlSend, ahk_parent, ^{Left}, ahk_class SpotifyMainWindow 
-DetectHiddenWindows, Off 
-return 
-}
+^Left::SpotifyControl("^{Left}")
 
 ; Ctrl+Right :: next song
-^Right:: 
-{ 
-DetectHiddenWindows, On 
-ControlSend, ahk_parent, ^{Right}, ahk_class SpotifyMainWindow 
-DetectHiddenWindows, Off 
-return 
-}
+^Right::SpotifyControl("^{Right}") 
 
 ; Ctrl+Up :: Pause/Play
-^UP::
-{ 
-DetectHiddenWindows, On 
-ControlSend, ahk_parent, {space}, ahk_class SpotifyMainWindow 
-DetectHiddenWindows, Off 
-return 
-}
+^Up::SpotifyControl("{Space}")
 
 
 ; Spotify window can't be move by the Windows+Left or Windows+Right shortcuts
@@ -262,5 +234,4 @@ return
 	WinMove, , , %NewX%, %NewY%, %NewWidth%, %NewHeight%
 	return
 	}
-
 #IfWinActive
