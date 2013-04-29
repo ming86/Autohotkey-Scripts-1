@@ -1,8 +1,9 @@
-﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 #Warn  ; Enable warnings to assist with detecting common errors.
 #SingleInstance force
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+SetTitleMatchMode 2
 
 
 ; ------------------ System Tray ------------------
@@ -11,106 +12,9 @@ Menu, TRAY, Tip, Autohotkey ; text displayed when hover over the icon
 ; --------------- end System Tray -----------------
 
 
-; ------------------ Folder paths -----------------
-DL = C:\Users\Arnaud\Downloads
-PERSO = D:\Documents\Perso
-VIDEOS = D:\Vidéos
-MUSIQUE = D:\Musique
-NAS = Z:\
-JOBS = D:\Documents\Perso\Jobs
-POGO = Y:\
-; ----------------end Folder paths ----------------
-
-
-; -------------------- Strings --------------------
-TRASH_TITLE = Corbeille
-TRASH_TEXT = Vider la corbeille ?
-CCLEANER_TITLE = CCleaner
-CCLEANER_TEXT = Nettoyer le PC ?
-; ------------------ end Strings ------------------
-
-
-; ------------------- Constants -------------------
-FIREFOX = %A_ProgramFiles% (x86)\Mozilla Firefox\FireFox.exe
-FIREFOX_WINDOW = ahk_class MozillaWindowClass
-MAIL = C:\Users\Arnaud\AppData\Local\Inky\inky.exe
-MAIL_WINDOW = ahk_class Inky
-MAIL_FOLDER = C:\Users\Arnaud\AppData\Local\Inky\
-FILEZILLA = %A_ProgramFiles% (x86)\FileZilla FTP Client\filezilla.exe --site=0NAS_int ; FileZilla with a defined profile (prefixed by "0" for custom entries)
-FILEZILLA_WINDOW = ahk_class wxWindowClassNR, FileZilla
-SPOTIFY = %A_AppData%\Spotify\spotify.exe
-global G_SPOTIFY_WINDOW:="ahk_class SpotifyMainWindow"
-
-
-; Read a file with strings to use with hotstrings and put it in the RESSOURCES variable.
-; The file must be save as "utf-8 with BOM" if there is accents in the text (French text for example).
-; Each string in this file is separated from the other via the "|" character.
-FileRead, RESSOURCES, %A_WorkingDir%\ressources.txt
-
-; store parts of the file in TXT# variables
-Loop, parse, RESSOURCES ,|,
-{
-	TXT%A_Index% = %A_LoopField%
-}
-; free the memory occupied by the variable
-RESSOURCES:=""
-
-; ---------------- end Constants ------------------
-
-
-; ################### Hotstrings ##################
-
-; Define ending characters for hotstrings. I removed the double quote and the exclamation point.
-; default : #Hotstring EndChars -()[]{}:;'"/\,.?!`n `t
-#Hotstring EndChars -()[]{}:;'/\,.?`n `t
-
-; E-mail adresses
-::a@::
-SendInput %TXT1%
-return
-
-::v@::
-SendInput %TXT2%
-return
-
-::g@::
-SendInput %TXT3%
-return
-
-; Mail signature
-::sig!::
-SendInput %TXT4%
-Return
-
-; Closing formula
-::pol!::
-SendInput %TXT5%
-Return
-
-; replace  "d  with today's date
-::"d::
-{
-FormatTime, CurrentDate,, dd/MM/yyyy
-SendInput %CurrentDate%
-return
-}
-
-; ################ end Hotstrings #################
-
-
-
-; ################### Shortcuts ###################
-
-
-; === Folders shortcuts
-~Numpad0 & ~Numpad1::run, %DL%
-~Numpad0 & ~Numpad2::run, %VIDEOS%
-~Numpad0 & ~Numpad3::run, %MUSIQUE%
-~Numpad0 & ~Numpad4::run, %JOBS%
-~Numpad0 & ~NumpadDot::run, %PERSO%
-~Numpad0 & ~Numpad9::run, %NAS%
-~Numpad0 & ~Numpad8::run, %POGO%
-
+#Include Constants.ahk
+#Include Hotstrings.ahk
+#Include Folders.ahk
 
 
 
@@ -198,6 +102,9 @@ F10::ProgramShortcut(FILEZILLA_WINDOW, FILEZILLA, "Max")
 ; === F12 :: Mail (Inky) ===
 F12::ProgramShortcut(MAIL_WINDOW, MAIL,, MAIL_FOLDER)
 
+; === Numpad Mult :: Text Editor ===
+NumpadMult::ProgramShortcut(EDITOR_WINDOW, EDITOR)
+
 ; === Numpad - :: Spotify ===
 NumpadSub::
 {
@@ -208,7 +115,7 @@ return
 }
 
 
-; ===| Firefox |===
+; ====| Firefox |====
 #IfWinActive ahk_class MozillaWindowClass
 
 	; Right+numpad0/Left+numpad0 :: Ctrl+Tab/Ctrl+Shift+Tab
@@ -222,7 +129,7 @@ return
 
 
 
-; ===| Spotify |===
+; ====| Spotify |====
 
 ; function to send controls to Spotify, even if the window is hidden or not in focus
 SpotifyControl(key)
@@ -242,12 +149,14 @@ SpotifyControl(key)
 ^Up::SpotifyControl("{Space}")
 
 
+
+
 ; Spotify window can't be move by the Windows+Left or Windows+Right shortcuts
 ; these 2 shortcuts recreate this behaviour (for Spotify only here)
 
 #IfWinActive ahk_class SpotifyMainWindow
 
-	; Win+Left :: Maximize the window to the left side of the screen.
+	; === Win+Left :: Maximize the window to the left side of the screen ===
 	#Left:: 
 	{
 	; Window to move
@@ -284,7 +193,7 @@ SpotifyControl(key)
 	}
 
 
-	; Win+Right :: Maximize the window to the right side of the screen.
+	; === Win+Right :: Maximize the window to the right side of the screen ===
 	#Right:: 
 	{
 	; Window to move
