@@ -17,12 +17,16 @@ PERSO = D:\Documents\Perso
 VIDEOS = D:\Vidéos
 MUSIQUE = D:\Musique
 NAS = Z:\
+JOBS = D:\Documents\Perso\Jobs
+POGO = Y:\
 ; ----------------end Folder paths ----------------
 
 
 ; -------------------- Strings --------------------
-TRASH_TITLE=Corbeille
-TRASH_TEXT=Vider la corbeille ?
+TRASH_TITLE = Corbeille
+TRASH_TEXT = Vider la corbeille ?
+CCLEANER_TITLE = CCleaner
+CCLEANER_TEXT = Nettoyer le PC ?
 ; ------------------ end Strings ------------------
 
 
@@ -39,6 +43,7 @@ global G_SPOTIFY_WINDOW:="ahk_class SpotifyMainWindow"
 
 
 ; Read a file with strings to use with hotstrings and put it in the RESSOURCES variable.
+; The file must be save as "utf-8 with BOM" if there is accents in the text (French text for example).
 ; Each string in this file is separated from the other via the "|" character.
 FileRead, RESSOURCES, %A_WorkingDir%\ressources.txt
 
@@ -77,6 +82,11 @@ return
 SendInput %TXT4%
 Return
 
+; Closing formula
+::pol!::
+SendInput %TXT5%
+Return
+
 ; replace  "d  with today's date
 ::"d::
 {
@@ -96,8 +106,11 @@ return
 ~Numpad0 & ~Numpad1::run, %DL%
 ~Numpad0 & ~Numpad2::run, %VIDEOS%
 ~Numpad0 & ~Numpad3::run, %MUSIQUE%
+~Numpad0 & ~Numpad4::run, %JOBS%
 ~Numpad0 & ~NumpadDot::run, %PERSO%
 ~Numpad0 & ~Numpad9::run, %NAS%
+~Numpad0 & ~Numpad8::run, %POGO%
+
 
 
 
@@ -107,11 +120,18 @@ Capslock::Send {Pause}
 ; === ² :: numpad+ ===
 SC029::NumpadAdd
 
-; === numpad Enter :: Middle Click
+; === numpad Enter :: Middle Click ===
 NumpadEnter::MButton
 
-; CCleaner (Clean and quit)
-^!w::Run, CCleaner.exe /AUTO
+
+; === CCleaner (Clean and quit) ===
+^!w::
+{
+MsgBox, 4148, %CCLEANER_TITLE%, %CCLEANER_TEXT%
+IfMsgBox, Yes
+	Run, CCleaner.exe /AUTO
+return
+}
 
 ; === Ctrl+q :: Close programs ===
 ^q::
