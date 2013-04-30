@@ -1,7 +1,7 @@
 Autohotkey
 =========
 
-[Utilities](https://github.com/vaz-ar/Utilities/blob/master/Autohotkey/Utilities.ahk)
+[Master](Master)
 -
 
 TODO
