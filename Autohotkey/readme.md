@@ -6,12 +6,12 @@ Autohotkey
 
 TODO
 
-[Reboot](https://github.com/vaz-ar/Utilities/blob/master/Autohotkey/reboot.ahk)
+[Reboot](reboot.ahk)
 -
 
 TODO
 
-[Stop](https://github.com/vaz-ar/Utilities/blob/master/Autohotkey/stop.ahk)
+[Stop](stop.ahk)
 -
 
 TODO
