@@ -119,8 +119,10 @@ return
 #IfWinActive ahk_class MozillaWindowClass
 
 	; Right+numpad0/Left+numpad0 :: Ctrl+Tab/Ctrl+Shift+Tab
-	~Numpad0 & ~Right::send ^{Tab}
-	~Numpad0 & ~Left::send ^+{Tab}
+	~Numpad0 & ~Up::send ^{Tab}
+	~Numpad0 & ~Down::send ^+{Tab}
+	~Numpad0 & ~Left::send !{Left}
+	~Numpad0 & ~Right::send !{Right}
 
 	; Escape :: Ctrl+w (close tab)
 	Esc::^w

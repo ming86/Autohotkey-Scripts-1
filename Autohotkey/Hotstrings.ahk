@@ -33,6 +33,11 @@ Return
 SendInput %TXT6%
 Return
 
+; Name
+::av!::
+SendInput %TXT7%
+Return
+
 ; replace "d  with today's date
 ::"d::
 {
