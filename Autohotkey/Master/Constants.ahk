@@ -1,6 +1,3 @@
-; ################### Constants ##################
-
-
 ; ------------------- Constants -------------------
 FIREFOX = %A_ProgramFiles% (x86)\Mozilla Firefox\FireFox.exe
 FIREFOX_WINDOW = ahk_class MozillaWindowClass
