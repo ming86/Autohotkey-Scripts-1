@@ -26,4 +26,6 @@ This file contain Spotify related hotkeys:
 * play/previous/next
 * send window to the left/right half of the screen
 
+* [Programs window shortcuts](ShortcutProgram.ahk)
 
+Shortcut to show/hide/launch a program depending on it's state
