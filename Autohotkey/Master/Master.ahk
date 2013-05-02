@@ -12,12 +12,11 @@ Menu, TRAY, Tip, Autohotkey ; text displayed when hover over the icon
 ; --------------- end System Tray -----------------
 
 
-
 #Include Constants.ahk
 #Include Hotstrings.ahk
 #Include Folders.ahk
 #Include Spotify.ahk
-
+#Include ShortcutProgram.ahk
 
 
 ; === CapsLock :: Pause (Key used for displaying Find And Run Robot) ===
@@ -75,46 +74,6 @@ F7::Media_Play_Pause
 
 
 
-; === shortcut for program windows function ===
-ProgramShortcut(WinClassOrName, ProgramPath, MaxMinHide = "", WorkingDir = "")
-{
-IfWinActive %WinClassOrName%
-	{
-	winMinimize
-	}
-else IfWinExist %WinClassOrName%
-	{
-	WinActivate
-	WinMaximize
-	}
-else
-	{
-	Run %ProgramPath%, %WorkingDir%, %MaxMinHide%
-	}
-}
-
-
-
-; === F1 :: Firefox ===
-F1::ProgramShortcut(FIREFOX_WINDOW, FIREFOX, "Max")
-
-; === F10 :: Filezilla ===
-F10::ProgramShortcut(FILEZILLA_WINDOW, FILEZILLA, "Max")
-
-; === F12 :: Mail (Inky) ===
-F12::ProgramShortcut(MAIL_WINDOW, MAIL,, MAIL_FOLDER)
-
-; === Numpad Mult :: Text Editor ===
-NumpadMult::ProgramShortcut(EDITOR_WINDOW, EDITOR)
-
-; === Numpad - :: Spotify ===
-NumpadSub::
-{
-DetectHiddenWindows, On
-ProgramShortcut(G_SPOTIFY_WINDOW, SPOTIFY)
-DetectHiddenWindows, Off
-return
-}
 
 
 ; ====| Firefox |====
