@@ -6,6 +6,12 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 SetTitleMatchMode 2
 
 
+; === /!\ Skip windows 8 "metro screen" when the script start /!\ ===
+; ===================================================================
+Send {LWin} ;========================================================
+; ===================================================================
+
+
 ; ------------------ System Tray ------------------
 Menu, TRAY, Icon, favicon.ico ; Icon displayed in the system tray
 Menu, TRAY, Tip, Autohotkey ; text displayed when hover over the icon
@@ -90,9 +96,6 @@ F7::Media_Play_Pause
 
 
 
-
-; I use clover as replacement for the default file explorer, "ahk_class CabinetWClass" is it's autohotkey window class.
-; to work with the default explorer this value must be changed
 #IfWinActive, ahk_class CabinetWClass
 
 	; === Ctrl+h :: Toggle file extension in explorer ===
