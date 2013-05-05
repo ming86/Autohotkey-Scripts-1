@@ -146,9 +146,9 @@ F7::Media_Play_Pause
 	}
 
 
-	Right::Enter
+	~Numpad0 & ~Left::send !{Up}
 
-	Left::Send !{Up}
+	~Numpad0 & ~Right::Send {Enter}
 	
 
 #IfWinActive
