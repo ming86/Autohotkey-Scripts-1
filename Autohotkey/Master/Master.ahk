@@ -145,4 +145,10 @@ F7::Media_Play_Pause
 		Return
 	}
 
+
+	Right::Enter
+
+	Left::Send !{Up}
+	
+
 #IfWinActive
