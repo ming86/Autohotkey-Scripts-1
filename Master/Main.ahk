@@ -96,6 +96,7 @@ F7::Media_Play_Pause
 
 
 
+; Shortcuts for file explorer
 #IfWinActive, ahk_class CabinetWClass
 
 	; === Ctrl+h :: Toggle file extension in explorer ===

@@ -38,6 +38,12 @@ Return
 SendInput %TXT7%
 Return
 
+; Tel
+::tl!::
+SendInput %TXT8%
+Return
+
+
 ; replace "d  with today's date
 ::"d::
 {
