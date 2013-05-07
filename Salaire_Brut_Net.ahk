@@ -5,6 +5,13 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #SingleInstance force
 
 
+
+;==========================================================
+; =======  Script to calculate french "Net" salary  =======
+;==========================================================
+
+
+
 ; Taux de charges pour le calcul (± 3%)
  TX = 0.77
 

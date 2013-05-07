@@ -16,3 +16,7 @@ Simple script that display a yes/no message box, if yes is chosen it shutdown th
 [AHK Edit Registry](ahk_edit_registry.ahk)
 -
 Script to change the program used when "right click > edit" on an ahk script.
+
+[Salaire Brut/Net](Salaire_Brut_Net.ahk)
+-
+ Script to calculate french "Net" salary 
