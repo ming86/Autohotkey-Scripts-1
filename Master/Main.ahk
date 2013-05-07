@@ -3,6 +3,7 @@
 #SingleInstance force
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+
 SetTitleMatchMode 2
 
 
@@ -29,7 +30,7 @@ Menu, TRAY, Tip, Autohotkey ; text displayed when hover over the icon
 Capslock::Send {Pause}
 
 ; === ² :: numpad+ ===
-SC029::NumpadAdd
+;SC029::NumpadAdd
 
 ; === numpad Enter :: Middle Click ===
 NumpadEnter::MButton
@@ -83,6 +84,10 @@ F7::Media_Play_Pause
 
 
 ; ====| Firefox |====
+
+;² + F1 :: transmission web
+SC029 & F1::Run, http://192.168.1.55:7557/tranz/web/
+
 #IfWinActive ahk_class MozillaWindowClass
 
 	; Right+numpad0/Left+numpad0 :: Ctrl+Tab/Ctrl+Shift+Tab
@@ -91,8 +96,9 @@ F7::Media_Play_Pause
 	~Numpad0 & ~Left::send !{Left}
 	~Numpad0 & ~Right::send !{Right}
 
-	; Escape :: Ctrl+w (close tab)
+	; Escape, Insert :: Ctrl+w (close tab)
 	Esc::^w
+	Insert::^w
 
 
 

@@ -30,21 +30,20 @@ F10::ProgramShortcut(FILEZILLA_WINDOW, FILEZILLA, "Max")
 
 
 ; === F12 :: Mail (Inky) ===
-F12::
-{
-	ProgramShortcut(MAIL_WINDOW, MAIL,, MAIL_FOLDER)
-	Sleep, 5000
-	WinGet, state, MinMax, %MAIL_WINDOW%
-	IfEqual, state, 0
-	{
-		WinMaximize, %MAIL_WINDOW%
-	}
-	Return
-}
+F12::ProgramShortcut(MAIL_WINDOW, MAIL,, MAIL_FOLDER)
 
 
 ; === Numpad Mult :: Text Editor ===
-NumpadMult::ProgramShortcut(EDITOR_WINDOW, EDITOR)
+NumpadMult::ProgramShortcut(EDITOR_WINDOW, EDITOR, "Max")
+
+
+;² + F2 :: Github
+SC029 & ~F2::
+{
+	SetTitleMatchMode, RegEx
+	ProgramShortcut(GIT_WINDOW, GIT, "Max", GIT_FOLDER)
+	return
+}
 
 
 ; === Numpad - :: Spotify ===
