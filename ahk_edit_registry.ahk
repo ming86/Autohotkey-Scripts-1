@@ -12,7 +12,7 @@ SetTitleMatchMode 2
 ; must be run as admin, otherwise the value is not changed (at least on windows 8, not tested on other versions)
 If not A_IsAdmin
 {
-	MsgBox, 4116, Error, This script must be run as Admin to change the registry value.
+	MsgBox, 4112, Error, This script must be run as Admin to change the registry value.
 }
 Else
 {
@@ -40,7 +40,7 @@ Else
 		}
 		Else ; The path entered is invalid
 		{
-			MsgBox, 4116, Error, This program does not exist.
+			MsgBox, 4112, Error, This program does not exist.
 			Goto, inputEntry ; jump to the inputEntry label
 		}
 	}

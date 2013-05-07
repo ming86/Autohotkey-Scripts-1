@@ -1,4 +1,4 @@
-Autohotkey
+Autohotkey Scripts
 =========
 
 [Master](Master)
