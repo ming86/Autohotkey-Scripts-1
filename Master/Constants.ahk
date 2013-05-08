@@ -21,6 +21,9 @@ GIT = C:\Users\Arnaud\AppData\Local\Apps\2.0\XDAWOODX.KZ5\G0NGZG56.7OZ\gith..tio
 GIT_FOLDER = C:\Users\Arnaud\AppData\Local\Apps\2.0\XDAWOODX.KZ5\G0NGZG56.7OZ\gith..tion_317444273a93ac29_0001.0000_855c896e1f9f6b94
 GIT_WINDOW = GitHub ahk_class HwndWrapper\[GitHub\.exe.*\] ;regex
 
+CYGWIN_WINDOW = ahk_class mintty
+CYGWIN = C:\cygwin\bin\mintty.exe -i /Cygwin-Terminal.ico -
+;CYGWIN_FOLDER = C:\cygwin\home\Arnaud
 
 
 ; -------------------- Strings --------------------

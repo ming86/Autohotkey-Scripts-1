@@ -6,5 +6,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 MsgBox, 4148, Redémarrage, Redémarrer le PC ?
-IfMsgBox, Yes, run, shutdown -r -t 0
+IfMsgBox, Yes
+	Shutdown, 2
 Return

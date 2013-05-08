@@ -5,7 +5,7 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
-MsgBox, 4148, Extinction, Arreter le PC ?
+MsgBox, 4148, Mise en veille, Mettre en veille le PC ?
 IfMsgBox, Yes
-	Shutdown, 1
-return
+	DllCall("PowrProf\SetSuspendState", "int", 0, "int", 0, "int", 0)
+Return
