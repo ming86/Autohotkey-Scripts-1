@@ -25,8 +25,11 @@ else
 F1::ProgramShortcut(FIREFOX_WINDOW, FIREFOX, "Max")
 
 
-; === F10 :: Filezilla ===
-F10::ProgramShortcut(FILEZILLA_WINDOW, FILEZILLA, "Max")
+; === F10 :: Filezilla with a defined profile ===
+F10::ProgramShortcut(FILEZILLA_WINDOW, FILEZILLA_NAS, "Max")
+
+; === "à" & F10 :: Filezilla ===
+SC00B & F10::ProgramShortcut(FILEZILLA_WINDOW, FILEZILLA, "Max")
 
 
 ; === F12 :: Mail (Inky) ===

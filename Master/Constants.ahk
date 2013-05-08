@@ -7,7 +7,8 @@ MAIL_WINDOW = ahk_class Inky
 MAIL_FOLDER = C:\Users\Arnaud\AppData\Local\Inky\
 
 ; FileZilla with a defined profile (prefixed by "0" for custom entries)
-FILEZILLA = %A_ProgramFiles% (x86)\FileZilla FTP Client\filezilla.exe --site=0NAS_int 
+FILEZILLA_NAS = %A_ProgramFiles% (x86)\FileZilla FTP Client\filezilla.exe --site=0NAS_int
+FILEZILLA = %A_ProgramFiles% (x86)\FileZilla FTP Client\filezilla.exe
 FILEZILLA_WINDOW = FileZilla ahk_class wxWindowClassNR
 
 SPOTIFY = %A_AppData%\Spotify\spotify.exe
