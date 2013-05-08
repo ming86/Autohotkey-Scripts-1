@@ -1,4 +1,7 @@
+; #################################################
 ; ################### Hotstrings ##################
+; #################################################
+
 
 ; Define ending characters for hotstrings. I removed the double quote and the exclamation point.
 ; default : #Hotstring EndChars -()[]{}:;'"/\,.?!`n `t

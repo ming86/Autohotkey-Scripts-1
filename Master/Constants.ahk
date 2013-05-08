@@ -60,5 +60,4 @@ Loop, parse, RESSOURCES ,|,
 }
 ; free the memory occupied by the variable
 RESSOURCES:=""
-
 return

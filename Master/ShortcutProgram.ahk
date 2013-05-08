@@ -1,5 +1,6 @@
+; ####################################################################
 ; ################### Shortcuts for programs window ##################
-
+; ####################################################################
 
 ; === function to interact with a defined program window ===
 ProgramShortcut(WinClassOrName, ProgramPath, MaxMinHide = "", WorkingDir = "")
