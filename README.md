@@ -7,11 +7,26 @@ Master script, the one that I launch on my computer startup. See [Master/readme]
 
 [Reboot](reboot.ahk)
 -
-Simple script that display a yes/no message box, if yes is chosen it reboot the computer. 
+Simple script to reboot the computer. 
+It needs a parameter when called :
+* --noconfirm : Reboot without asking for confirmation
+* --confirm : Ask for confirmation via a pop up
+
 
 [Stop](stop.ahk)
 -
-Simple script that display a yes/no message box, if yes is chosen it shutdown the computer.
+Simple script to shutdown the computer.
+It needs a parameter when called :
+* --noconfirm : Shutdown without asking for confirmation
+* --confirm : Ask for confirmation via a pop up
+
+[Sleep](sleep.ahk)
+-
+Simple script to suspend the computer.
+It needs a parameter when called :
+* --noconfirm : Suspend without asking for confirmation
+* --confirm : Ask for confirmation via a pop up
+
 
 [AHK Edit Registry](ahk_edit_registry.ahk)
 -
