@@ -14,12 +14,13 @@ Send {LWin} ;========================================================
 
 
 ; ------------------ System Tray ------------------
-Menu, TRAY, Icon, favicon.ico ; Icon displayed in the system tray
+Menu, TRAY, Icon, Icons/Master.ico ; Icon displayed in the system tray
 Menu, TRAY, Tip, Autohotkey ; text displayed when hover over the icon
 ; --------------- end System Tray -----------------
 
 
 #Include Constants.ahk
+#Include PowerMenu.ahk
 #Include Hotstrings.ahk
 #Include Folders.ahk
 #Include FileExplorer.ahk
@@ -31,8 +32,6 @@ Menu, TRAY, Tip, Autohotkey ; text displayed when hover over the icon
 ; === CapsLock :: Pause (Key used for displaying Find And Run Robot) ===
 Capslock::Send {Pause}
 
-; === ² :: numpad+ ===
-;SC029::NumpadAdd
 
 ; === numpad Enter :: Middle Click ===
 NumpadEnter::MButton

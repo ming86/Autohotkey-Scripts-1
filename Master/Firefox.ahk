@@ -15,8 +15,8 @@ SC029 & F1::Run, http://192.168.1.55:7557/tranz/web/
 	~Numpad0 & ~Left::send !{Left}
 	~Numpad0 & ~Right::send !{Right}
 
-	; Escape, Insert :: Ctrl+w (close tab)
+	; Escape :: Ctrl+w (close tab)
 	Esc::^w
-	Insert::^w
+
 
 #IfWinActive
