@@ -35,4 +35,5 @@ This file contain Spotify related hotkeys:
 Shortcut to show/hide/launch a program depending on it's state
 
 * [Icons Folder](Icons)
+
 Contain all icons used by this script
