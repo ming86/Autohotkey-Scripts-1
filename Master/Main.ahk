@@ -1,16 +1,11 @@
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 #Warn  ; Enable warnings to assist with detecting common errors.
 #SingleInstance force
+
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 SetTitleMatchMode 2
-
-
-; === /!\ Skip windows 8 "metro screen" when the script start /!\ ===
-; ===================================================================
-Send {LWin} ;========================================================
-; ===================================================================
 
 
 ; ------------------ System Tray ------------------
@@ -19,6 +14,7 @@ Menu, TRAY, Tip, Autohotkey ; text displayed when hover over the icon
 ; --------------- end System Tray -----------------
 
 
+; ------------------ Includes ---------------------
 #Include Constants.ahk
 #Include PowerMenu.ahk
 #Include Hotstrings.ahk
@@ -27,7 +23,13 @@ Menu, TRAY, Tip, Autohotkey ; text displayed when hover over the icon
 #Include Spotify.ahk
 #Include Firefox.ahk
 #Include ShortcutProgram.ahk
+; ---------------- End Includes -------------------
 
+
+; ------------------ Hotkeys ----------------------
+
+; === Disable Insert key ===
+Insert::Return
 
 ; === CapsLock :: Pause (Key used for displaying Find And Run Robot) ===
 Capslock::Send {Pause}
@@ -79,3 +81,5 @@ F8::Media_Next
 F6::Media_Prev
 ; Play/Pause
 F7::Media_Play_Pause
+
+; ----------------- End Hotkeys -------------------
