@@ -2,25 +2,6 @@
 ; ################### Shortcuts for programs window ##################
 ; ####################################################################
 
-; === function to interact with a defined program window ===
-ProgramShortcut(WinClassOrName, ProgramPath, MaxMinHide = "", WorkingDir = "")
-{
-IfWinActive %WinClassOrName%
-	{
-	winMinimize
-	}
-else IfWinExist %WinClassOrName%
-	{
-	WinActivate
-	WinMaximize
-	}
-else
-	{
-	Run %ProgramPath%, %WorkingDir%, %MaxMinHide%
-	}
-}
-
-
 
 ; === F1 :: Firefox ===
 F1::ProgramShortcut(FIREFOX_WINDOW, FIREFOX, "Max")

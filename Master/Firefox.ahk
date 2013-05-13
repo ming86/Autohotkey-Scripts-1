@@ -18,22 +18,31 @@ SC029 & F1::Run, http://192.168.1.55:7557/tranz/web/
 	~Numpad0 & ~Up::send !{Right}
 
 	; Double press on NumpadDot :: right click menu => view image => open it in a new tab (firefox)
-	~NumpadDot::
-	{
-		If (A_PriorHotkey <> A_ThisHotkey or A_TimeSincePriorHotkey > 400)
-		{
-			; Too much time between presses, so this isn't a double-press.
-			KeyWait, %A_ThisHotkey%
-			Return
-		}
-	; When double key press
-	Send {RButton} ; Right click
-	Sleep, 10 ; Doesn't work without a sleep between the two key
-	Send ^{h} ; Ctrl + H => H for view image (french "shortcut") and Ctrl to open in a new tab
-	Return
-	}
+	~NumpadDot::DoublePress("viewImage")
+
+	; Double press on ! :: right click menu => Add to transmission
+	~!::DoublePress("addTransmission")
 
 	; Escape :: Ctrl+w (close tab)
 	;Esc::^w
 
 #IfWinActive
+
+
+; ------- Labels -------- 
+
+; right click menu => view image => open it in a new tab (firefox)
+viewImage:
+; When double key press
+Send {RButton} ; Right click
+Sleep, 10 ; Doesn't work without a sleep between the two key
+Send ^{h} ; Ctrl + H => H for view image (french "shortcut") and Ctrl to open in a new tab
+Return
+
+
+; right click menu => Add to transmission (firefox extension)
+addTransmission:
+Send {RButton} ; Right click
+Sleep, 10 ; Doesn't work without a sleep between the two key
+Send {A}
+Return

@@ -18,6 +18,7 @@ Menu, TRAY, Tip, Autohotkey ; text displayed when hover over the icon
 #Include Constants.ahk
 #Include PowerMenu.ahk
 #Include Hotstrings.ahk
+#Include Functions.ahk
 #Include Folders.ahk
 #Include FileExplorer.ahk
 #Include Spotify.ahk
