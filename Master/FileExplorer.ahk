@@ -5,11 +5,10 @@
 
 #IfWinActive, ahk_class CabinetWClass
 
-	; === Ctrl+h :: Toggle file extension in explorer ===
+	; === Ctrl+e :: Toggle file extension in explorer ===
 	;
 	; registry key : [HKEY_CURRENT_USER\Software\Microsoft\Windows\Curre ntVersion\Explorer\Advanced] => HideFileExt
 	; values : 0 => show, 1=> do not show
-
 	^e::
 	{
 		RegRead, hide_ext, HKCU, Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced, HideFileExt
@@ -28,12 +27,10 @@
 		Return
 	}
 
-
 	; === Ctrl+h :: Toggle hidden files in explorer ===
 	;
 	; registry key : [HKEY_CURRENT_USER\Software\Microsoft\Windows\Curre ntVersion\Explorer\Advanced] => Hidden
 	; values : 1 => Show, 2 => do not show
-
 	^h::
 	{	
 		RegRead, hide_ext, HKCU, Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced, Hidden
@@ -52,10 +49,8 @@
 		Return
 	}
 
-
-	~Numpad0 & ~Left::send !{Up}
+	~Numpad0 & ~Left::Send !{Up}
 
 	~Numpad0 & ~Right::Send {Enter}
-	
 
 #IfWinActive

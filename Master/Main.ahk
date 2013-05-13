@@ -28,8 +28,8 @@ Menu, TRAY, Tip, Autohotkey ; text displayed when hover over the icon
 
 ; ------------------ Hotkeys ----------------------
 
-; === Disable Insert key ===
-Insert::Return
+; === Insert key  :: Ctrl+W ===
+Insert::^w
 
 ; === CapsLock :: Pause (Key used for displaying Find And Run Robot) ===
 Capslock::Send {Pause}
