@@ -1,8 +1,7 @@
 ### Custom ###
 
 test*.ahk
-test.txt
-ressources.txt
+*.txt
 *.exe
 
 

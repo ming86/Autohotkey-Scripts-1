@@ -49,8 +49,6 @@
 		Return
 	}
 
-	~Numpad0 & ~Left::Send !{Up}
-
-	~Numpad0 & ~Right::Send {Enter}
+	~Numpad0 & ~Up::Send !{Up}
 
 #IfWinActive
