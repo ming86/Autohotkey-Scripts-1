@@ -22,11 +22,6 @@ EDITOR = %A_ProgramFiles%\Sublime Text 2\sublime_text.exe
 EDITOR_WINDOW = Sublime Text 2 ahk_class PX_WINDOW_CLASS 
 
 
-GIT = C:\Users\%A_UserName%\AppData\Local\Apps\2.0\XDAWOODX.KZ5\G0NGZG56.7OZ\gith..tion_317444273a93ac29_0001.0000_855c896e1f9f6b94\GitHub.exe
-GIT_FOLDER = C:\Users\%A_UserName%\AppData\Local\Apps\2.0\XDAWOODX.KZ5\G0NGZG56.7OZ\gith..tion_317444273a93ac29_0001.0000_855c896e1f9f6b94
-GIT_WINDOW = GitHub ahk_class HwndWrapper\[GitHub\.exe.*\] ;regex
-
-
 CYGWIN_WINDOW = ahk_class mintty
 CYGWIN = C:\cygwin\bin\mintty.exe -i /Cygwin-Terminal.ico -
 ;CYGWIN_FOLDER = C:\cygwin\home\%A_UserName%

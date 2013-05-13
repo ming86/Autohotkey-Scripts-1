@@ -23,16 +23,7 @@ NumpadMult::ProgramShortcut(EDITOR_WINDOW, EDITOR, "Max")
 
 
 ; === ² & F3 :: Cygwin ===
-SC029 & ~F3::ProgramShortcut(CYGWIN_WINDOW, CYGWIN)
-
-
-;² + F2 :: Github
-SC029 & ~F2::
-{
-	SetTitleMatchMode, RegEx
-	ProgramShortcut(GIT_WINDOW, GIT, "Max", GIT_FOLDER)
-	return
-}
+SC029 & ~F2::ProgramShortcut(CYGWIN_WINDOW, CYGWIN)
 
 
 ; === Numpad - :: Spotify ===
