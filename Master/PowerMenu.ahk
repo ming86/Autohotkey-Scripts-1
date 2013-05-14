@@ -25,7 +25,7 @@ return
 End::LongPress("ShowPowerMenu")
 
 ; If the key is pressed twice in less than 400 ms then the menu is displayed
-SC029::DoublePress("ShowPowerMenu")
+SC029::DoublePress(1,"ShowPowerMenu")
 
 
 

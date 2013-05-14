@@ -82,5 +82,8 @@ F8::Media_Next
 F6::Media_Prev
 ; Play/Pause
 F7::Media_Play_Pause
+; Mute
+F9::DoublePress(0, "{Volume_Mute}")
+
 
 ; ----------------- End Hotkeys -------------------

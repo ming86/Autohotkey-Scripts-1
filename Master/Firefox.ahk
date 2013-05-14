@@ -18,10 +18,10 @@ SC029 & F1::Run, http://192.168.1.55:7557/tranz/web/
 	~Numpad0 & ~Up::send !{Right}
 
 	; Double press on NumpadDot :: right click menu => view image => open it in a new tab (firefox)
-	~NumpadDot::DoublePress("viewImage")
+	~NumpadDot::DoublePress(1,"viewImage")
 
 	; Double press on ! :: right click menu => Add to transmission
-	~!::DoublePress("addTransmission")
+	~!::DoublePress(1,"addTransmission")
 
 	; Escape :: Ctrl+w (close tab)
 	;Esc::^w
