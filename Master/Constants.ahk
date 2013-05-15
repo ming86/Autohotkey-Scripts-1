@@ -30,9 +30,9 @@ CYGWIN = C:\cygwin\bin\mintty.exe -i /Cygwin-Terminal.ico -
 ;CYGWIN_FOLDER = C:\cygwin\home\%A_UserName%
 
 
-_SLEEP = %A_MyDocuments%\GitHub\Utilities\sleep.exe --noconfirm
-_STOP = %A_MyDocuments%\GitHub\Utilities\stop.exe --noconfirm
-_REBOOT = %A_MyDocuments%\GitHub\Utilities\reboot.exe --noconfirm
+_SLEEP = ..\sleep.exe --noconfirm
+_STOP = ..\stop.exe --noconfirm
+_REBOOT = ..\reboot.exe --noconfirm
 
 
 

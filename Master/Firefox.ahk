@@ -24,7 +24,7 @@ SC029 & F1::Run, http://192.168.1.55:7557/tranz/web/
 	~!::DoublePress(1,"addTransmission")
 
 	; Escape :: Ctrl+w (close tab)
-	;Esc::^w
+	Esc::DoublePress(0,"^{w}")
 
 #IfWinActive
 
