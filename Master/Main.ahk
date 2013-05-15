@@ -32,6 +32,9 @@ Menu, TRAY, Tip, Autohotkey ; text displayed when hover over the icon
 ; === Insert key  :: Ctrl+W ===
 Insert::^w
 
+; Escape :: Ctrl+w (close tab)
+Esc::DoublePress(0,"^{w}")
+
 ; === CapsLock :: Pause (Key used for displaying Find And Run Robot) ===
 Capslock::Send {Pause}
 

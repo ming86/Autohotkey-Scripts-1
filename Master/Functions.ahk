@@ -25,7 +25,7 @@ else
 ; === DoublePress( ActionType, Action ) ===
 ;
 ; If the key is pressed twice in less than 400 ms then :
-; 		If ActionType == 0 : Action is a key to press (with the {}, for example "{Escape}" )
+; 		If ActionType == 0 : Action is a key or a key combination to press (with the {}, for example "^{Escape}" )
 ; 		If ActionType == 1 : Action is a label (gosub)
 
 DoublePress(ActionType,Action)
