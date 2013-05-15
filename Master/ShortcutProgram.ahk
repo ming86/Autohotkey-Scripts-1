@@ -14,9 +14,11 @@ F10::ProgramShortcut(FILEZILLA_WINDOW, FILEZILLA_NAS, "Max")
 ~SC00B & F10::ProgramShortcut(FILEZILLA_WINDOW, FILEZILLA, "Max")
 
 
-; === F12 :: Mail (Inky) ===
-F12::ProgramShortcut(MAIL_WINDOW, MAIL,, MAIL_FOLDER)
+;; === F12 :: Mail (Inky) ===
+;F12::ProgramShortcut(MAIL_WINDOW, MAIL,, MAIL_FOLDER)
 
+; === F12 :: Mail (Thunderbird) ===
+F12::ProgramShortcut(MAIL_WINDOW, MAIL,"Max")
 
 ; === Numpad Mult :: Text Editor ===
 NumpadMult::ProgramShortcut(EDITOR_WINDOW, EDITOR, "Max")

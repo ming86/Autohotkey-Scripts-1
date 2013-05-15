@@ -1,11 +1,14 @@
 ﻿; ------------------- Constants -------------------
 FIREFOX = %A_ProgramFiles% (x86)\Mozilla Firefox\FireFox.exe
-FIREFOX_WINDOW = ahk_class MozillaWindowClass
+FIREFOX_WINDOW = Mozilla Firefox ahk_class MozillaWindowClass
 
 
-MAIL = C:\Users\%A_UserName%\AppData\Local\Inky\inky.exe
-MAIL_WINDOW = ahk_class Inky
-MAIL_FOLDER = C:\Users\%A_UserName%\AppData\Local\Inky\
+;MAIL = C:\Users\%A_UserName%\AppData\Local\Inky\inky.exe
+;MAIL_WINDOW = ahk_class Inky
+;MAIL_FOLDER = C:\Users\%A_UserName%\AppData\Local\Inky\
+
+MAIL = %A_ProgramFiles% (x86)\Mozilla Thunderbird\thunderbird.exe
+MAIL_WINDOW = Mozilla Thunderbird ahk_class MozillaWindowClass
 
 
 ; FileZilla with a defined profile (prefixed by "0" for custom entries)
