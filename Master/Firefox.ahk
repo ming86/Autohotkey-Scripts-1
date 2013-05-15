@@ -23,12 +23,10 @@ SC029 & F1::Run, http://192.168.1.55:7557/tranz/web/
 	; Double press on ! :: right click menu => Add to transmission
 	~!::DoublePress(1,"addTransmission")
 
-<<<<<<< HEAD
-=======
+
 	; Escape :: Ctrl+w (close tab)
 	Esc::DoublePress(0,"^{w}")
 
->>>>>>> 0638f3b93aa1dc7c15fede4ce8627a7be86d7161
 #IfWinActive
 
 
