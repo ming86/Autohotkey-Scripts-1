@@ -49,6 +49,19 @@
 		Return
 	}
 
+
 	~Numpad0 & ~Up::Send !{Up}
 
+	~*::DoublePress(1,"properties")
+
 #IfWinActive
+
+
+; ------------------ Labels ----------------------
+
+; Show the properties window for the file selected AND under the mouse's pointer
+properties:
+Send {RButton} ; Right click
+Sleep, 10 ; Works better with a sleep between the two key
+Send {R}
+Return
