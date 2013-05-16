@@ -1,4 +1,4 @@
-#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 #Warn  ; Enable warnings to assist with detecting common errors.
 #SingleInstance force
 
@@ -88,5 +88,19 @@ F7::Media_Play_Pause
 ; Mute
 F9::DoublePress(0, "{Volume_Mute}")
 
+
+; Sublime text shortcuts
+#IfWinActive, ahk_class PX_WINDOW_CLASS
+
+	; View, Layout, Single
+	; (on a french azerty keyboard the original 
+	; 	shortcut change the keyboard layout, because it contain Alt+Shift)
+	^&::Send, !+1
+
+	; View, Layout, columns:2
+	; (idem last shortcut)
+	^é::Send, !+2
+
+#IfWinActive
 
 ; ----------------- End Hotkeys -------------------
