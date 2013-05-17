@@ -10,6 +10,7 @@ F1::ProgramShortcut(FIREFOX_WINDOW, FIREFOX, "Max")
 ;/*** F10  ::  Filezilla with a defined profile ***/
 F10::ProgramShortcut(FILEZILLA_WINDOW, FILEZILLA_NAS, "Max")
 
+
 ;/*** "à" & F10  ::  Filezilla ***/
 ~SC00B & F10::ProgramShortcut(FILEZILLA_WINDOW, FILEZILLA, "Max")
 
@@ -17,8 +18,10 @@ F10::ProgramShortcut(FILEZILLA_WINDOW, FILEZILLA_NAS, "Max")
 ; F12 :: Mail (Inky)
 ;F12::ProgramShortcut(MAIL_WINDOW, MAIL,, MAIL_FOLDER)
 
+
 ;/*** F12  ::  Mail (Thunderbird) ***/
 F12::ProgramShortcut(MAIL_WINDOW, MAIL,"Max")
+
 
 ;/*** Numpad Mult  ::  Text Editor ***/
 NumpadMult::ProgramShortcut(EDITOR_WINDOW, EDITOR, "Max")
@@ -34,5 +37,5 @@ NumpadSub::
 DetectHiddenWindows, On
 ProgramShortcut(G_SPOTIFY_WINDOW, SPOTIFY)
 DetectHiddenWindows, Off
-return
+Return
 }

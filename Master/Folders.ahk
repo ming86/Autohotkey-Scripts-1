@@ -13,6 +13,7 @@
 
 ;/*** Numpad0 + Numpad4 :: JOBS ***/
 ~Numpad0 & ~Numpad4::run, %JOBS%
+
 ;/*** Numpad0 + Numpad5 :: AHK ***/
 ~Numpad0 & ~Numpad5::run, %AHK%
 
