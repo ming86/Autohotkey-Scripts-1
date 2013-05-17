@@ -8,8 +8,9 @@ Main script, the one that I launch on my computer startup. Every other AHK scrip
 [Constants and strings](Constants.ahk)
 -
 This file contain all the variable declarations, such as folders path, programs path, string used for message box.
-
-There is also a loop that parse a file that contain some text used for hotstrings, text I put in a "ressources.txt" file, with "sensible" content (mail adresses for example). Each values in this file must be separated with "|" (a pipe) to work in this configuration. Each part is stored into a TXT# variable.
+Also :
+* a loop that parse a file that contain some text used for hotstrings, text I put in a "ressources.txt" file, with "sensible" content (mail adresses for example). Each values in this file must be separated with "|" (a pipe) to work in this configuration. Each part is stored into a TXT# variable.
+* Help window generation : get all the lines starting with ;/*** , for each file, and put them in a tree view.
 
 [Functions](Functions.ahk)
 -
@@ -21,30 +22,34 @@ Create a menu to sleep, shutdown and reboot the computer. It can be triggered by
 
 [Hotstrings](Hotstrings.ahk)
 -
-This file contain all the hotstrings.
+Contains all the hotstrings.
 
 [Folders](Folders.ahk)
 -
-This file contain all the folder related hotkeys.
+Folders related hotkeys.
 
 [File Explorer](FileExplorer.ahk)
 -
-This file contain hotkeys to display or not hidden files and file extension in Windows file explorer
+File explorer hotkey, such as hotkeys to display or not hidden files and file extensions.
 
 [Spotify](Spotify.ahk)
 -
-This file contain Spotify related hotkeys: 
+Spotify related hotkeys: 
 * play/previous/next
 * send window to the left/right half of the screen
 
 [Firefox](Firefox.ahk)
 -
-This files contain Firefox related shortcuts.
+Firefox related shortcuts.
 
 [Programs window shortcuts](ShortcutProgram.ahk)
 -
-Shortcut to show/hide/launch a program depending on it's state
+Shortcuts to show/hide/launch a program window.
+
+[Sublime Text 2](SublimeText2.ahk)
+-
+Sublime Text 2 shortcuts.
 
 [Icons Folder](Icons)
 -
-Contain all icons used by this script
+Contains all icons used by this script

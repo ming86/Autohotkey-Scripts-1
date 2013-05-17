@@ -6,7 +6,6 @@
 ; === Menu ===
 ; Create a popup menu by adding some items to it.
 ;Each item has it's own icon
-
 Menu, PowerMenu, Add, &Veille, Sleep_
 Menu, PowerMenu, Icon, &Veille, Icons/sleep.ico,, 32
 Menu, PowerMenu, Add  ; Add a separator line.
@@ -15,16 +14,15 @@ Menu, PowerMenu, Icon, &Redemarrer, Icons/reboot.ico,, 32
 Menu, PowerMenu, Add  ; Add a separator line.
 Menu, PowerMenu, Add, &Eteindre, Stop_
 Menu, PowerMenu, Icon, &Eteindre, Icons/stop.ico,, 32
-return
-
+Return
 
 
 ; === Hotkeys ===
 
-; If End is pressed for more than 1 s then display then menu, else send End.
+;/*** Long press End :: Display Power Menu ***/
 End::LongPress("ShowPowerMenu")
 
-; If the key is pressed twice in less than 400 ms then the menu is displayed
+;/*** Long Press ² :: Display Power Menu ***/
 SC029::DoublePress(1,"ShowPowerMenu")
 
 

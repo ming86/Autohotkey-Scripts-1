@@ -1,34 +1,34 @@
-; ####################################################################
+﻿; ####################################################################
 ; ################### Shortcuts for programs window ##################
 ; ####################################################################
 
 
-; === F1 :: Firefox ===
+;/*** F1  ::  Firefox ***/
 F1::ProgramShortcut(FIREFOX_WINDOW, FIREFOX, "Max")
 
 
-; === F10 :: Filezilla with a defined profile ===
+;/*** F10  ::  Filezilla with a defined profile ***/
 F10::ProgramShortcut(FILEZILLA_WINDOW, FILEZILLA_NAS, "Max")
 
-; === "à" & F10 :: Filezilla ===
+;/*** "à" & F10  ::  Filezilla ***/
 ~SC00B & F10::ProgramShortcut(FILEZILLA_WINDOW, FILEZILLA, "Max")
 
 
-;; === F12 :: Mail (Inky) ===
+; F12 :: Mail (Inky)
 ;F12::ProgramShortcut(MAIL_WINDOW, MAIL,, MAIL_FOLDER)
 
-; === F12 :: Mail (Thunderbird) ===
+;/*** F12  ::  Mail (Thunderbird) ***/
 F12::ProgramShortcut(MAIL_WINDOW, MAIL,"Max")
 
-; === Numpad Mult :: Text Editor ===
+;/*** Numpad Mult  ::  Text Editor ***/
 NumpadMult::ProgramShortcut(EDITOR_WINDOW, EDITOR, "Max")
 
 
-; === ² & F3 :: Cygwin ===
+;/*** ² + F3  ::  Cygwin ***/
 SC029 & ~F2::ProgramShortcut(CYGWIN_WINDOW, CYGWIN)
 
 
-; === Numpad - :: Spotify ===
+;/*** Numpad -  ::  Spotify ***/
 NumpadSub::
 {
 DetectHiddenWindows, On

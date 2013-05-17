@@ -8,49 +8,51 @@
 #Hotstring EndChars -()[]{}:;'/\,.?`n `t
 
 
-; E-mail adresses
+;/*** a@ :: E-mail adress 1 ***/
 ::a@::
 SendInput %TXT1%
-return
+Return
 
+;/*** v@ :: E-mail adress 2 ***/
 ::v@::
 SendInput %TXT2%
-return
+Return
 
+;/*** g@ :: E-mail adress 3 ***/
 ::g@::
 SendInput %TXT3%
-return
+Return
 
-; Mail signature
+;/*** sig! :: Mail signature ***/
 ::sig!::
 SendInput %TXT4%
 Return
 
-; Closing formula
+;/*** pol! :: Closing formula ***/
 ::pol!::
 SendInput %TXT5%
 Return
 
-; website
+;/*** sit! ::  Website ***/
 ::sit!::
 SendInput %TXT6%
 Return
 
-; Name
+;/*** av! ::  Name ***/
 ::av!::
 SendInput %TXT7%
 Return
 
-; Tel
+;/*** tl! :: Phone ***/
 ::tl!::
 SendInput %TXT8%
 Return
 
 
-; replace "d  with today's date
+;/*** d" :: Today's date ***/
 ::"d::
 {
-FormatTime, CurrentDate,, dd/MM/yyyy
-SendInput %CurrentDate%
-return
+	FormatTime, CurrentDate,, dd/MM/yyyy
+	SendInput %CurrentDate%
+	Return
 }

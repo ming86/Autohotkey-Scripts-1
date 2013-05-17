@@ -6,19 +6,20 @@
 ; === function to interact with a defined program window ===
 ProgramShortcut(WinClassOrName, ProgramPath, MaxMinHide = "", WorkingDir = "")
 {
-IfWinActive %WinClassOrName%
+	IfWinActive %WinClassOrName%
 	{
-	winMinimize
+		WinMinimize
 	}
-else IfWinExist %WinClassOrName%
+	Else IfWinExist %WinClassOrName%
 	{
-	WinActivate
-	WinMaximize
+		WinActivate
+		WinMaximize
 	}
-else
+	Else
 	{
-	Run %ProgramPath%, %WorkingDir%, %MaxMinHide%
+		Run %ProgramPath%, %WorkingDir%, %MaxMinHide%
 	}
+	Return
 }
 
 
@@ -36,15 +37,10 @@ DoublePress(ActionType,Action)
 		KeyWait, %A_ThisHotkey%
 		Return
 	}
-
 	IfEqual, ActionType, 1
-	{
 		Gosub, %Action%
-	}
 	Else IfEqual, ActionType, 0
-	{
 		Send, %Action%
-	}
 	Return
 }
 
@@ -59,12 +55,33 @@ LongPress(Action)
 	start := A_TickCount
 	KeyWait, %A_ThisHotkey%
 	If (A_TickCount - start) > 1000
-	{
 		Gosub, %Action%
-	}
 	Else
-	{
 		Send {%A_ThisHotkey%}
-	}
-	return
+	Return
 }
+
+
+
+; Creates TreeView from a string in which each item is placed in new line and hierarchy is defined by Tab character on the left.
+; Item options can be added after one or more Tab characters after item name.
+; This function is public domain.
+;
+; ====> Function created by "Learning one", see http://www.autohotkey.com/board/topic/92863-function-createtreeview/ for more informations
+
+CreateTreeView(TreeViewDefinitionString) {	; by Learning one
+	IDs := {} 
+	Loop, parse, TreeViewDefinitionString, `n, `r
+	{
+		if A_LoopField is space
+			continue
+		Item := RTrim(A_LoopField, A_Space A_Tab), Item := LTrim(Item, A_Space), Level := 0
+		While (SubStr(Item,1,1) = A_Tab)
+			Level += 1,	Item := SubStr(Item, 2)
+		RegExMatch(Item, "([^`t]*)([`t]*)([^`t]*)", match)	; match1 = ItemName, match3 = Options
+		if (Level=0)
+			IDs["Level0"] := TV_Add(match1, 0, match3)
+		else
+			IDs["Level" Level] := TV_Add(match1, IDs["Level" Level-1], match3)
+	}
+}	; http://www.autohotkey.com/board/topic/92863-function-createtreeview/
