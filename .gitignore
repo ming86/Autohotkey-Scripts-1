@@ -1,9 +1,9 @@
 ### Custom ###
 
-test*.ahk
+TESTS
 *.txt
 *.exe
-
+*.wav
 
 
 ############
