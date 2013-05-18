@@ -14,18 +14,29 @@ Menu, TRAY, Tip, Autohotkey ; text displayed when hover over the icon
 ; --------------- end System Tray -----------------
 
 
+
 ; ------------------ Includes ---------------------
-#Include Constants.ahk
-#Include PowerMenu.ahk
-#Include Hotstrings.ahk
-#Include Functions.ahk
-#Include Folders.ahk
+
+; Auto execution
+	#Include Constants.ahk
+	#Include Help.ahk
+
+
+	; In order to work this call mus be within the "auto execution" section of the script.
+	; See Functions.ahk for the code
+	OnSaveCompileOrReload()
+
+	#Include PowerMenu.ahk
+; End auto execution (Return encoutered in PowerMenu.ahk)
+
 #Include FileExplorer.ahk
+#Include Firefox.ahk
+#Include Folders.ahk
+#Include Functions.ahk
+#Include Hotstrings.ahk
+#Include ShortcutProgram.ahk
 #Include Spotify.ahk
 #Include SublimeText2.ahk
-#Include Firefox.ahk
-#Include ShortcutProgram.ahk
-; ---------------- End Includes -------------------
 
 
 ; ------------------ Hotkeys ----------------------
@@ -79,8 +90,6 @@ NumpadEnter::MButton
 }
 
 
-; === Media Keys ===
-
 ;/*** F8 :: Next ***/
 F8::Media_Next
 
@@ -104,5 +113,3 @@ RAlt & h::
 	Gui, Show
 	Return
 }
-
-; ----------------- End Hotkeys -------------------
