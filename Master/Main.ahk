@@ -36,6 +36,7 @@ Return
 ; Functions folder
 #Include Functions/CreateTreeView.ahk
 #Include Functions/DoublePress.ahk
+#Include Functions/Help.ahk
 #Include Functions/LongPress.ahk
 #Include Functions/OnSaveCompileOrReload.ahk
 #Include Functions/ProgramShortcut.ahk
@@ -115,18 +116,9 @@ F9::DoublePress(0, "{Volume_Mute}")
 
 
 ;@//  AltGr + H :: Show help window
-RAlt & h::
+RAlt & h::Help(TREEVIEW_SHORTCUT_LIST)
 {
-	Gui, Font, s13, Verdana
-	Gui, Add, TreeView, H600 W800
-	CreateTreeView(TREEVIEW_SHORTCUT_LIST)
-	Gui, Show
-	Return
 
-	;GuiCancel:
-	GuiClose:
-	Gui, Destroy
-	Return
 }
 
 
