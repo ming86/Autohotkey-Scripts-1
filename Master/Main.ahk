@@ -15,49 +15,59 @@ Menu, TRAY, Tip, Autohotkey ; text displayed when hover over the icon
 
 
 
-; ------------------ Includes ---------------------
+; ====== Includes ======
 
-; Auto execution
-	#Include Constants.ahk
-	#Include Help.ahk
+; --- Auto execution section
+
+#Include Constants.ahk
+
+; Data Management folder, must be in auto execution section
+#Include DataManagement/HelpData.ahk
+#Include DataManagement/HotstringsData.ahk
+#Include DataManagement/PowerMenu.ahk
+
+OnSaveCompileOrReload()
+
+Return
+; --- End auto execution
+
+#Include Labels.ahk
+
+; Functions folder
+#Include Functions/CreateTreeView.ahk
+#Include Functions/DoublePress.ahk
+#Include Functions/LongPress.ahk
+#Include Functions/OnSaveCompileOrReload.ahk
+#Include Functions/ProgramShortcut.ahk
 
 
-	; In order to work this call mus be within the "auto execution" section of the script.
-	; See Functions.ahk for the code
-	OnSaveCompileOrReload()
-
-	#Include PowerMenu.ahk
-; End auto execution (Return encoutered in PowerMenu.ahk)
-
+; Hotkeys and Hotstrings files
 #Include FileExplorer.ahk
 #Include Firefox.ahk
 #Include Folders.ahk
-#Include Functions.ahk
 #Include Hotstrings.ahk
 #Include ShortcutProgram.ahk
 #Include Spotify.ahk
 #Include SublimeText2.ahk
 
 
-; ------------------ Hotkeys ----------------------
 
-;/*** Insert :: Ctrl + W ***/
-Insert::^w
+; ====== Hotkeys ======
 
 
-;/*** Double Press Escape :: Ctrl + W (close tab) ***/
-~Esc::DoublePress(0,"^{w}")
+;@//  Insert :: Ctrl + Shift + T
+Insert::Send ^+{T}
 
 
-;/*** CapsLock :: Pause (Key used for displaying Find And Run Robot) ***/
+;@//  CapsLock :: Pause (Key used for displaying Find And Run Robot)
 Capslock::Send {Pause}
 
 
-;/*** Numpad Enter :: Middle Click ***/
+;@//  Numpad Enter :: Middle Click
 NumpadEnter::MButton
 
 
-;/*** Ctrl + Alt + W :: CCleaner (Clean and quit) ***/
+;@//  Ctrl + Alt + W :: CCleaner (Clean and quit)
 ^!w::
 {
 	MsgBox, 4148, %CCLEANER_TITLE%, %CCLEANER_TEXT%
@@ -67,7 +77,7 @@ NumpadEnter::MButton
 }
 
 
-;/*** Ctrl + Q :: Close window ***/
+;@//  Ctrl + Q :: Close window
 ^q::
 {
 	; Kill Spotify, not just the window
@@ -81,7 +91,7 @@ NumpadEnter::MButton
 }
 
 
-;/*** Win + T :: Empty trash, for all drives, but ask before ***/
+;@//  Win + T :: Empty trash, for all drives, but ask before
 #t::
 {
 	MsgBox, 4148, %TRASH_TITLE%, %TRASH_TEXT%
@@ -90,21 +100,21 @@ NumpadEnter::MButton
 }
 
 
-;/*** F8 :: Next ***/
+;@//  F8 :: Next
 F8::Media_Next
 
-;/*** F6 :: Previous ***/
+;@//  F6 :: Previous
 F6::Media_Prev
 
-;/*** F7 :: Play/Pause ***/
+;@//  F7 :: Play/Pause
 F7::Media_Play_Pause
 
 
-;/*** Double press F9 :: Mute Sound ***/
+;@//  Double press F9 :: Mute Sound
 F9::DoublePress(0, "{Volume_Mute}")
 
 
-;/*** AltGr + H :: Show help window ***/
+;@//  AltGr + H :: Show help window
 RAlt & h::
 {
 	Gui, Font, s13, Verdana
@@ -112,4 +122,17 @@ RAlt & h::
 	CreateTreeView(TREEVIEW_SHORTCUT_LIST)
 	Gui, Show
 	Return
+
+	;GuiCancel:
+	GuiClose:
+	Gui, Destroy
+	Return
 }
+
+
+;@//  Double Press Escape :: Ctrl + W (close tab)
+~Esc::DoublePress(0,"^{w}")
+
+
+;@//  Double Press ² :: Display Power Menu
+SC029::DoublePress(1,"ShowPowerMenu")

@@ -8,17 +8,10 @@ Main script, the one that I launch on my computer startup. Every other AHK scrip
 [Constants and strings](Constants.ahk)
 -
 This file contain all the variable declarations, such as folders path, programs path, string used for message box.
-Also :
-* a loop that parse a file that contain some text used for hotstrings, text I put in a "ressources.txt" file, with "sensible" content (mail adresses for example). Each values in this file must be separated with "|" (a pipe) to work in this configuration. Each part is stored into a TXT# variable.
-* Help window generation : get all the lines starting with ;/*** , for each file, and put them in a tree view.
 
-[Functions](Functions.ahk)
+[Labels](Labels.ahk)
 -
-This file regroup all the functions
-
-[Power Menu](PowerMenu.ahk)
--
-Create a menu to sleep, shutdown and reboot the computer. It can be triggered by pressing a key for a certain amount of time or by pressing two times a key (see [Functions](Functions.ahk)).
+Contains all the Labels.
 
 [Hotstrings](Hotstrings.ahk)
 -
@@ -50,6 +43,16 @@ Shortcuts to show/hide/launch a program window.
 -
 Sublime Text 2 shortcuts.
 
+[Functions Folder](Functions)
+-
+This folder regroup all the functions, in separate files
+
+[Data Management](DataManagement)
+-
+This folder contains all the data recuperation/generation that are done at the beginning of the script
+
 [Icons Folder](Icons)
 -
 Contains all icons used by this script
+
+

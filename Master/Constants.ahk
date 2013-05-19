@@ -1,4 +1,5 @@
-﻿; ------------------- Constants -------------------
+﻿
+; === Constants ===
 
 FIREFOX 		= %A_ProgramFiles% (x86)\Mozilla Firefox\FireFox.exe
 FIREFOX_WINDOW 	= Mozilla Firefox ahk_class MozillaWindowClass
@@ -14,7 +15,7 @@ FILEZILLA 			= %A_ProgramFiles% (x86)\FileZilla FTP Client\filezilla.exe
 FILEZILLA_WINDOW 	= FileZilla ahk_class wxWindowClassNR
 
 
-SPOTIFY = %A_AppData%\Spotify\spotify.exe
+SPOTIFY 				= %A_AppData%\Spotify\spotify.exe
 global G_SPOTIFY_WINDOW:="ahk_class SpotifyMainWindow"
 
 
@@ -24,12 +25,7 @@ EDITOR_WINDOW 	= Sublime Text 2 ahk_class PX_WINDOW_CLASS
 
 CYGWIN_WINDOW 	= ahk_class mintty
 CYGWIN 			= C:\cygwin\bin\mintty.exe -i /Cygwin-Terminal.ico -
-;CYGWIN_FOLDER = C:\cygwin\home\%A_UserName%
-
-
-_SLEEP 	= ..\sleep.exe --noconfirm
-_STOP 	= ..\stop.exe --noconfirm
-_REBOOT = ..\reboot.exe --noconfirm
+;CYGWIN_FOLDER 	= C:\cygwin\home\%A_UserName%
 
 
 ;MAIL = C:\Users\%A_UserName%\AppData\Local\Inky\inky.exe
@@ -38,7 +34,7 @@ _REBOOT = ..\reboot.exe --noconfirm
 
 
 
-; -------------------- Strings --------------------
+; === Strings ===
 
 TRASH_TITLE = Corbeille
 TRASH_TEXT 	= Vider la corbeille ?
@@ -48,7 +44,7 @@ CCLEANER_TEXT 	= Nettoyer le PC ?
 
 
 
-; ----------------- Folders paths ------------------
+; === Folders paths ===
 
 DL 		= C:\Users\%A_UserName%\Downloads
 PERSO 	= D:\Documents\Perso
@@ -60,24 +56,27 @@ POGO 	= Y:\
 AHK 	= %A_MyDocuments%\GitHub\Utilities
 
 
-; ---------------- Hotstrings data ----------------
 
-; Read a file with strings to use and put it in the RESSOURCES variable.
-; The file must be save as "utf-8 with BOM" if there is accents in the text (French text for example).
-; Each string in this file is separated from the other via the "|" character.
-FileRead, RESSOURCES, %A_WorkingDir%\ressources.txt
-Loop, parse, RESSOURCES ,|,
-{
-	TXT%A_Index% = %A_LoopField% ; store parts of the file in TXT# variables
-}
-; free the memory occupied by the variable
-RESSOURCES:=""
+; === File Paths ===
+
+; Power management scripts path
+SLEEP_  := "..\sleep.exe --noconfirm"
+STOP_ 	:= "..\stop.exe --noconfirm"
+REBOOT_ := "..\reboot.exe --noconfirm"
 
 
-; --------------- Script Path --------------------
+; Ressources File Path
+R_FILE_PATH = %A_WorkingDir%\ressources.txt
+
+
 ; Full path of the ahk file that is running / from wich the running exe has been compiled
 StringTrimRight, P, A_ScriptFullPath, 3
 P .="ahk"
 AHK_SCRIPT_PATH := A_IsCompiled ? P : A_ScriptFullPath
-P =
+P :=""
 
+
+
+; === Variables initialisation ===
+
+TREEVIEW_SHORTCUT_LIST =
