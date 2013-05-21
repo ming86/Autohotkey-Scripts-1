@@ -1,4 +1,4 @@
-﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 #Warn  ; Enable warnings to assist with detecting common errors.
 #SingleInstance force
 
@@ -128,3 +128,7 @@ RAlt & h::Help(TREEVIEW_SHORTCUT_LIST)
 
 ;@//  Double Press ² :: Display Power Menu
 SC029::DoublePress(1,"ShowPowerMenu")
+
+
+;@//  Ctrl + < :: Minimize current window 
+^<::WinMinimize, A
