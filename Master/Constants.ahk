@@ -77,6 +77,8 @@ P :=""
 
 
 
-; === Variables initialisation ===
+; === Variables & initialisation ===
 
 TREEVIEW_SHORTCUT_LIST =
+
+RELOAD_DELAY = 60000

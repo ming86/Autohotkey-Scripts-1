@@ -9,6 +9,8 @@
 	wich present a similar script that work for modification on a script, not on its included scripts. 
 */
 
+
+
 OnSaveCompileOrReload()
 {
 	local TimeBefore
@@ -20,8 +22,7 @@ OnSaveCompileOrReload()
 		; get the modification time for all the ahk files in the working directory (%A_WorkingDir%)
 		FileGetTime, TimeBefore%A_Index%, %A_LoopFileFullPath%
 	}
-	SetTimer, CheckState, 60000 ; check for change every minute
-	;SetTimer, CheckState, 5000 ; check for change every 5 seconds
+	SetTimer, CheckState, %RELOAD_DELAY% ; check for change every %RELOAD_DELAY% ms (See Constants.ahk)
 
 
 	CheckState:
