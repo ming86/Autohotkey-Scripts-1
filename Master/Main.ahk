@@ -84,6 +84,10 @@ NumpadEnter::MButton
 	; Kill Spotify, not just the window
 	IfWinActive, %G_SPOTIFY_WINDOW%
 	{
+		Send ^l
+		Sleep 50
+		Send {Tab}
+		Sleep 50
 		Send !f
 		Sleep 50
 		Send q
