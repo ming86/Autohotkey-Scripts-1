@@ -85,11 +85,11 @@ NumpadEnter::MButton
 	IfWinActive, %G_SPOTIFY_WINDOW%
 	{
 		Send ^l
-		Sleep 50
+		Sleep 200
 		Send {Tab}
-		Sleep 50
-		Send !f
-		Sleep 50
+		Sleep 200
+		Send {Alt}
+		Sleep 200
 		Send q
 	}
 	Else Send !{F4}
