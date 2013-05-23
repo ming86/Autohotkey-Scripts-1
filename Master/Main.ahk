@@ -85,6 +85,7 @@ NumpadEnter::MButton
 	IfWinActive, %G_SPOTIFY_WINDOW%
 	{
 		Send !f
+		Sleep 50
 		Send q
 	}
 	Else Send !{F4}
@@ -117,9 +118,6 @@ F9::DoublePress(0, "{Volume_Mute}")
 
 ;@//  AltGr + H :: Show help window
 RAlt & h::Help(TREEVIEW_SHORTCUT_LIST)
-{
-
-}
 
 
 ;@//  Double Press Escape :: Ctrl + W (close tab)

@@ -53,8 +53,7 @@ MUSIQUE = D:\Musique
 NAS 	= Z:\
 JOBS 	= D:\Documents\Perso\Jobs
 POGO 	= Y:\
-AHK 	= %A_MyDocuments%\GitHub\Utilities
-
+AHK 	= %A_MyDocuments%\GitHub\Autohotkey-Scripts
 
 
 ; === File Paths ===
@@ -69,16 +68,19 @@ REBOOT_ := "..\reboot.exe --noconfirm"
 R_FILE_PATH = %A_WorkingDir%\ressources.txt
 
 
+; === OnSaveCompileOrReload vars ===
+
 ; Full path of the ahk file that is running / from wich the running exe has been compiled
 StringTrimRight, P, A_ScriptFullPath, 3
 P .="ahk"
 AHK_SCRIPT_PATH := A_IsCompiled ? P : A_ScriptFullPath
 P :=""
 
-
-
-; === Variables & initialisation ===
-
-TREEVIEW_SHORTCUT_LIST =
+; Script Name (only used for display)
+SCRIPT_NAME = Master
 
 RELOAD_DELAY = 60000
+
+; === Help() Vars ===
+
+TREEVIEW_SHORTCUT_LIST =

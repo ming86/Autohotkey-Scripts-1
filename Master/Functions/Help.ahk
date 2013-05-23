@@ -6,14 +6,15 @@
 
 Help(TreeView_Data)
 {
+	Gui,+AlwaysOnTop
 	Gui, Font, s13, Verdana
 	Gui, Add, TreeView, H600 W800
 	CreateTreeView(TreeView_Data)
 	Gui, Show,, Help
 	Return
 
-	GuiCancel:
 	GuiClose:
+	GuiEscape:
 	Gui, Destroy
 	Return
 }

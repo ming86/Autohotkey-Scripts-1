@@ -33,7 +33,7 @@ Loop %ArrayCount% ; loop for each ahk file
 		    IfInString, A_LoopReadLine,;@//
 		    {
 		    	Line=%A_LoopReadLine% ; trim the string
-		    	ShortcutsList .= Line . "`n"
+		    	ShortcutsList .= Line "`n"
 		    }
 	    }   
 
@@ -44,7 +44,7 @@ Loop %ArrayCount% ; loop for each ahk file
 	    	If A_LoopField =  ; Ignore the blank item at the end of the list.
 	    	Continue
 	    	StringTrimLeft, field, A_LoopField, 5
-	    	TREEVIEW_SHORTCUT_LIST .="`n`t" . field
+	    	TREEVIEW_SHORTCUT_LIST .="`n`t" field
 	    }
 	    TREEVIEW_SHORTCUT_LIST .="`n"
 	}

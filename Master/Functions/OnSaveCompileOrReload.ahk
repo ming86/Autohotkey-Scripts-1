@@ -1,8 +1,10 @@
 /* 
 	=== OnSaveCompileOrReload() ===
 
-	Check if any of the files that are included in the main script (all the ahk files of the folder)
+	Check if any of the files that are included in the main script (all the ahk files of the folder and subfolders)
 	and the main script have been modified, if so reload (if he wasn't running compiled) or recompile and run.
+
+	/!\ Before the function call, RELOAD_DELAY must be defined somewhere, else it will run every 250 ms (cf. http://l.autohotkey.net/docs/commands/SetTimer.htm), which can be a problem if there is a lot of file to check.
 
 	NB: the idea of renaming the script to be able to compile came from this thread: 
 	http://www.autohotkey.com/board/topic/65169-autoreload-script-if-changed-even-compiled-ones/
@@ -24,13 +26,14 @@ OnSaveCompileOrReload()
 	}
 	SetTimer, CheckState, %RELOAD_DELAY% ; check for change every %RELOAD_DELAY% ms (See Constants.ahk)
 
+	
 
 	CheckState:
 	Loop, *.ahk, 0, 1 ;Loop for each ahk file in the working dir and its subfolders
 	{
 		IfNotEqual, TimeBefore%A_Index%, %A_LoopFileTimeModified%
 		{
-			TrayTip, Autohotkey, The script is reloading, 3
+			TrayTip, Autohotkey, The %SCRIPT_NAME% script is reloading, 3 ;If SCRIPT_NAME doesn't exist it just display "The script is reloading"
 			Sleep 4000 ; let the time for the tray tip to be displayed
 			IfEqual, A_IsCompiled, 1
 			{

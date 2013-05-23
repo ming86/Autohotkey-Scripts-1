@@ -47,7 +47,7 @@ Sublime Text 2 shortcuts.
 -
 This folder regroup all the functions, in separate files
 
-[Data Management](DataManagement)
+[Data Management Folder](DataManagement)
 -
 This folder contains all the data recuperation/generation that are done at the beginning of the script
 
