@@ -29,4 +29,8 @@ SC029 & F1::Run, http://192.168.1.55:7557/tranz/web/
 	;@//  Double press "ù" :: Pin tab
 	ù::DoublePress(1,"pinTab")
 
+	;@// Double Press "$" :: Unpin Tab
+	$::DoublePress(1,"unPinTab")
+
+
 #IfWinActive

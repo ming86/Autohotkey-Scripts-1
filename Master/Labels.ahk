@@ -56,3 +56,10 @@ Send {RButton} ; Right click
 Sleep, 10 ; Works better with a sleep between the two key
 Send {P}
 Return
+
+; right click menu => Unpin tab (over a tab)
+unPinTab:
+Send {RButton} ; Right click
+Sleep, 10 ; Works better with a sleep between the two key
+Send {R}
+Return
