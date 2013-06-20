@@ -19,6 +19,10 @@ Reboot_:
 Run, %REBOOT_%
 return
 
+Hibernate_:
+Run, %HIBERNATE_%
+return
+
 
 ; === File Explorer ===
 

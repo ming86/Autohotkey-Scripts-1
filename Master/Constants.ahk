@@ -59,9 +59,10 @@ AHK 	= %A_MyDocuments%\GitHub\Autohotkey-Scripts
 ; === File Paths ===
 
 ; Power management scripts path
-SLEEP_  := "..\sleep.exe --noconfirm"
-STOP_ 	:= "..\stop.exe --noconfirm"
-REBOOT_ := "..\reboot.exe --noconfirm"
+SLEEP_  	:= "..\sleep.exe --noconfirm"
+STOP_ 		:= "..\stop.exe --noconfirm"
+REBOOT_ 	:= "..\reboot.exe --noconfirm"
+HIBERNATE_ 	:= "..\hibernate.exe --noconfirm"
 
 
 ; Ressources File Path
