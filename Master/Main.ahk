@@ -92,6 +92,11 @@ NumpadEnter::MButton
 		Sleep 200
 		Send q
 	}
+	; do nothing if on the desktop
+	Else IfWinActive ahk_class WorkerW
+	{
+		Return
+	}
 	Else Send !{F4}
 	Return
 }
