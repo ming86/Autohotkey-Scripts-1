@@ -9,7 +9,7 @@
 	Each string in the ressources file is separated from the other via the "|" character.
 */
 
-FileRead, Ressources, R_FILE_PATH
+FileRead, Ressources, %R_FILE_PATH%
 Loop, parse, Ressources ,|,
 {
 	TXT%A_Index% = %A_LoopField% ; store parts of the file in TXT# variables
