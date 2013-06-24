@@ -7,7 +7,7 @@
 SC029 & F1::Run, http://192.168.1.55:7557/tranz/web/
 
 
-#IfWinActive ahk_class MozillaWindowClass
+#IfWinActive Mozilla Firefox ahk_class MozillaWindowClass
 
 	;@//  Right+numpad0 / Left+numpad0 :: Ctrl+Tab / Ctrl+Shift+Tab
 	~Numpad0 & ~Left::send ^+{Tab}
@@ -33,7 +33,7 @@ SC029 & F1::Run, http://192.168.1.55:7557/tranz/web/
 	ù::DoublePress(1,"pinTab")
 
 	;@// Double Press "$" :: Unpin Tab
-	$::DoublePress(1,"unPinTab")
+	~$::DoublePress(1,"unPinTab")
 
 
 #IfWinActive

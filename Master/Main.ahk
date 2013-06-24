@@ -50,6 +50,7 @@ Return
 #Include ShortcutProgram.ahk
 #Include Spotify.ahk
 #Include SublimeText2.ahk
+#Include Thunderbird.ahk
 
 
 

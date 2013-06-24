@@ -8,6 +8,10 @@ FIREFOX_WINDOW 	= Mozilla Firefox ahk_class MozillaWindowClass
 MAIL 		= %A_ProgramFiles% (x86)\Mozilla Thunderbird\thunderbird.exe
 MAIL_WINDOW = Mozilla Thunderbird ahk_class MozillaWindowClass
 
+;MAIL = C:\Users\%A_UserName%\AppData\Local\Inky\inky.exe
+;MAIL_WINDOW = ahk_class Inky
+;MAIL_FOLDER = C:\Users\%A_UserName%\AppData\Local\Inky\
+
 
 ; FileZilla with a defined profile (prefixed by "0" for custom entries)
 FILEZILLA_NAS 		= %A_ProgramFiles% (x86)\FileZilla FTP Client\filezilla.exe --site=0NAS_int
@@ -26,11 +30,6 @@ EDITOR_WINDOW 	= Sublime Text 2 ahk_class PX_WINDOW_CLASS
 CYGWIN_WINDOW 	= ahk_class mintty
 CYGWIN 			= C:\cygwin\bin\mintty.exe -i /Cygwin-Terminal.ico -
 ;CYGWIN_FOLDER 	= C:\cygwin\home\%A_UserName%
-
-
-;MAIL = C:\Users\%A_UserName%\AppData\Local\Inky\inky.exe
-;MAIL_WINDOW = ahk_class Inky
-;MAIL_FOLDER = C:\Users\%A_UserName%\AppData\Local\Inky\
 
 
 
