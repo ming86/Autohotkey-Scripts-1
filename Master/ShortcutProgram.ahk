@@ -15,12 +15,20 @@ F10::ProgramShortcut(FILEZILLA_WINDOW, FILEZILLA_NAS, "Max")
 ~SC00B & F10::ProgramShortcut(FILEZILLA_WINDOW, FILEZILLA, "Max")
 
 
-; F12 :: Mail (Inky)
-;F12::ProgramShortcut(MAIL_WINDOW, MAIL,, MAIL_FOLDER)
-
+;@// F12 :: Mail (Inky)
+F12::
+{
+	InkyState := ProgramShortcut(MAIL_WINDOW, MAIL,, MAIL_FOLDER)
+	IfEqual, InkyState, 3
+	{
+		WinWait, %MAIL_WINDOW%
+		WinMaximize
+	}
+	Return
+}
 
 ;@//  F12  ::  Mail (Thunderbird)
-F12::ProgramShortcut(MAIL_WINDOW, MAIL,"Max")
+;F12::ProgramShortcut(MAIL_WINDOW, MAIL,"Max")
 
 
 ;@//  Numpad Mult  ::  Text Editor
