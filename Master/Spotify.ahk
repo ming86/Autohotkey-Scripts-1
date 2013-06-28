@@ -2,7 +2,7 @@
 ; ################### Spotify ##################
 ; ##############################################
 
-
+/*
 ; function to send controls to Spotify, even if the window is hidden or not in focus
 SpotifyControl(key)
 {
@@ -20,8 +20,7 @@ SpotifyControl(key)
 
 ;@//  Ctrl+Up :: Pause/Play
 ^Up::SpotifyControl("{Space}")
-
-
+*/
 
 #IfWinActive ahk_class SpotifyMainWindow
 
