@@ -5,12 +5,12 @@ FIREFOX 		= %A_ProgramFiles% (x86)\Mozilla Firefox\FireFox.exe
 FIREFOX_WINDOW 	= Mozilla Firefox ahk_class MozillaWindowClass
 
 
-MAIL 		= %A_ProgramFiles% (x86)\Mozilla Thunderbird\thunderbird.exe
-MAIL_WINDOW = Mozilla Thunderbird ahk_class MozillaWindowClass
+;MAIL 		= %A_ProgramFiles% (x86)\Mozilla Thunderbird\thunderbird.exe
+;MAIL_WINDOW = Mozilla Thunderbird ahk_class MozillaWindowClass
 
-;MAIL = C:\Users\%A_UserName%\AppData\Local\Inky\inky.exe
-;MAIL_WINDOW = ahk_class Inky
-;MAIL_FOLDER = C:\Users\%A_UserName%\AppData\Local\Inky\
+MAIL = C:\Users\%A_UserName%\AppData\Local\Inky\inky.exe
+MAIL_WINDOW = Inky ahk_class Inky
+MAIL_FOLDER = C:\Users\%A_UserName%\AppData\Local\Inky\
 
 
 ; FileZilla with a defined profile (prefixed by "0" for custom entries)
@@ -79,7 +79,7 @@ P :=""
 ; Script Name (only used for display)
 SCRIPT_NAME = Master
 
-RELOAD_DELAY = 60000
+RELOAD_DELAY = 1000
 
 ; === Help() Vars ===
 
