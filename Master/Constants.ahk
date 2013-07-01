@@ -65,7 +65,7 @@ HIBERNATE_ 	:= "..\hibernate.exe --noconfirm"
 
 
 ; Ressources File Path
-R_FILE_PATH = %A_WorkingDir%\ressources.txt
+R_FILE_PATH = %A_WorkingDir%\Data\ressources.txt
 
 
 ; === OnSaveCompileOrReload vars ===
@@ -79,8 +79,12 @@ P :=""
 ; Script Name (only used for display)
 SCRIPT_NAME = Master
 
-RELOAD_DELAY = 1000
+RELOAD_DELAY = 10000
 
 ; === Help() Vars ===
 
 TREEVIEW_SHORTCUT_LIST =
+
+
+; === Sort Files Data ===
+#Include Data/SortFilesData.ahk

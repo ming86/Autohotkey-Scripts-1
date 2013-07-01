@@ -50,7 +50,7 @@ Return
 addTransmission:
 Send {RButton} ; Right click
 Sleep, 10 ; Works better with a sleep between the two key
-Send {A}
+Send a
 Return
 
 
@@ -58,12 +58,12 @@ Return
 pinTab:
 Send {RButton} ; Right click
 Sleep, 10 ; Works better with a sleep between the two key
-Send {P}
+Send p
 Return
 
 ; right click menu => Unpin tab (over a tab)
 unPinTab:
 Send {RButton} ; Right click
 Sleep, 10 ; Works better with a sleep between the two key
-Send {R}
+Send r
 Return

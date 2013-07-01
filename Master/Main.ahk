@@ -22,11 +22,12 @@ Menu, TRAY, Tip, Autohotkey ; text displayed when hover over the icon
 #Include Constants.ahk
 
 ; Data Management folder, must be in auto execution section
-#Include DataManagement/HelpData.ahk
-#Include DataManagement/HotstringsData.ahk
-#Include DataManagement/PowerMenu.ahk
+#Include Data/HelpData.ahk
+#Include Data/HotstringsData.ahk
+#Include Data/PowerMenu.ahk
 
 OnSaveCompileOrReload()
+SortFiles()
 
 Return
 ; --- End auto execution
@@ -40,6 +41,7 @@ Return
 #Include Functions/LongPress.ahk
 #Include Functions/OnSaveCompileOrReload.ahk
 #Include Functions/ProgramShortcut.ahk
+#Include Functions/SortFiles.ahk
 
 
 ; Hotkeys and Hotstrings files
