@@ -5,7 +5,7 @@
 
 SortFiles()
 {
-	Global SortFilesCount, SortTimer
+	Global SortFilesCount, SortTimer, FIREFOX_WINDOW, FILEZILLA_WINDOW
 
 	Loop %SortFilesCount%
 	{
@@ -18,23 +18,32 @@ SortFiles()
 
 	; actions to perform
 	SortActions:
-	loop, %SortFilesCount%
+	DetectHiddenWindows, On 
+	;do not move files if there may be some currently downloading
+	IfWinNotExist, %FIREFOX_WINDOW%
 	{
-		IfExist % Move_%A_Index%
+		IfWinNotExist, %FILEZILLA_WINDOW%
 		{
-			D := Dest_%A_Index%
-			M := Move_%A_Index%
-
-			FileMove, %M%, %D% 
-			If ErrorLevel
+			Loop, %SortFilesCount%
 			{
-				Loop, %M%, 0, 0
+				IfExist % Move_%A_Index%
 				{
-					SplitPath,A_LoopFileFullPath,, dir, ext, name
-					FileMove, %A_LoopFileFullPath%, %dir%\%name%_%A_Index%.%ext%
+					D := Dest_%A_Index%
+					M := Move_%A_Index%
+
+					FileMove, %M%, %D% 
+					If ErrorLevel
+					{
+						Loop, %M%, 0, 0
+						{
+							SplitPath,A_LoopFileFullPath,, dir, ext, name
+							FileMove, %A_LoopFileFullPath%, %dir%\%name%_%A_Index%.%ext%
+						}
+					}
 				}
 			}
 		}
 	}
+	DetectHiddenWindows, Off
 	Return
 }

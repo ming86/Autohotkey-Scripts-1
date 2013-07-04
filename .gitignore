@@ -4,6 +4,7 @@ TESTS
 *.txt
 *.exe
 *.wav
+*.lnk
 
 
 ############

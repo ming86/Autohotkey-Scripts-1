@@ -32,6 +32,7 @@ CYGWIN 			= C:\cygwin\bin\mintty.exe -i /Cygwin-Terminal.ico -
 ;CYGWIN_FOLDER 	= C:\cygwin\home\%A_UserName%
 
 
+JDOWNLOADER_WINDOW = JDownloader ahk_class SunAwtFrame
 
 ; === Strings ===
 
