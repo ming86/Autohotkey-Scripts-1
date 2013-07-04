@@ -96,7 +96,12 @@ NumpadEnter::MButton
 		Send q
 	}
 	; do nothing if on the desktop
-	Else IfWinActive ahk_class WorkerW
+	Else IfWinActive, ahk_class WorkerW
+	{
+		Return
+	}
+	; do nothing if on the taskbar
+	Else IfWinActive, ahk_class Shell_TrayWnd
 	{
 		Return
 	}
