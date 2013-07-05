@@ -34,4 +34,10 @@ Script to change the program used when "right click > edit" on an ahk script.
 
 [Salaire Brut/Net](Salaire_Brut_Net.ahk)
 -
- Script to calculate french "Net" salary 
+ Script to calculate french "Net" salary
+ 
+ [Relative Playlist Converter](RelativePathPlaylistConverter.ahk)
+ Convert absolutes path in m3u files to relatives (Work In Progress)
+ 
+	[RelativePathPlaylistCreator](RelativePathPlaylistCreator.ahk)
+ Create a m3u playlist from the content of a folder (Work In Progress)
