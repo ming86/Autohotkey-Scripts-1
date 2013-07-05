@@ -5,7 +5,6 @@ TESTS
 *.exe
 *.wav
 *.lnk
-*.bat
 
 
 ############

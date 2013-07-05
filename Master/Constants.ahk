@@ -50,10 +50,14 @@ DL 		= C:\Users\%A_UserName%\Downloads
 PERSO 	= D:\Documents\Perso
 VIDEOS 	= D:\Vidéos
 MUSIQUE = D:\Musique
-NAS 	= Z:\
 JOBS 	= D:\Documents\Perso\Jobs
-POGO 	= Y:\
 AHK 	= %A_MyDocuments%\GitHub\Autohotkey-Scripts
+
+; impossible to open a network share mounted as a drive if the script/program is run as admin
+;NAS 	= Z:\      
+NAS 	= \\NANANAS\nas 
+;POGO 	= Y:\
+POGO 	= \\POGO\DL
 
 
 ; === File Paths ===
@@ -83,9 +87,7 @@ SCRIPT_NAME = Master
 RELOAD_DELAY = 10000
 
 ; === Help() Vars ===
-
 TREEVIEW_SHORTCUT_LIST =
-
 
 ; === Sort Files Data ===
 #Include Data/SortFilesData.ahk
