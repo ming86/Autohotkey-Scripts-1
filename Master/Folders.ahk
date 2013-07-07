@@ -17,6 +17,9 @@
 ;@//  Numpad0 + Numpad5 :: AHK
 ~Numpad0 & ~Numpad5::run, %AHK%
 
+;@//  Numpad0 + Numpad6 :: Nexus 7
+~Numpad0 & ~Numpad6::run, %NEXUS%
+
 ;@//  Numpad0 + Numpad8:: POGO
 ~Numpad0 & ~Numpad8::run, %POGO%
 

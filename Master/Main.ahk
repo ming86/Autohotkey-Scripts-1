@@ -19,13 +19,15 @@ Menu, TRAY, Tip, Autohotkey ; text displayed when hover over the icon
 
 ; --- Auto execution section
 
-#Include Constants.ahk
-
 ; Data Management folder, must be in auto execution section
+#Include Data/Constants.ahk
+#Include Data/SortFilesData.ahk
+
 #Include Data/HelpData.ahk
 #Include Data/HotstringsData.ahk
 #Include Data/PowerMenu.ahk
 
+;Functions ta run periodically
 OnSaveCompileOrReload()
 SortFiles()
 
@@ -88,11 +90,11 @@ NumpadEnter::MButton
 	IfWinActive, %G_SPOTIFY_WINDOW%
 	{
 		Send ^l
-		Sleep 200
+		Sleep 100
 		Send {Tab}
-		Sleep 200
+		Sleep 100
 		Send {Alt}
-		Sleep 200
+		Sleep 100
 		Send q
 	}
 	; do nothing if on the desktop
