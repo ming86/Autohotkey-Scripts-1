@@ -56,7 +56,7 @@ NEXUS 	= C:\Users\%A_UserName%\Links\Nexus.lnk
 
 ; impossible to open a network share mounted as a drive if the script/program is run as admin
 ;NAS 	= Z:\      
-NAS 	= \\NANANAS\nas 
+NAS 	= \\NANANAS\nas
 ;POGO 	= Y:\
 POGO 	= \\POGO\DL
 

@@ -8,7 +8,14 @@ F1::ProgramShortcut(FIREFOX_WINDOW, FIREFOX, "Max")
 
 
 ;@//  F10  ::  Filezilla with a defined profile
-F10::ProgramShortcut(FILEZILLA_WINDOW, FILEZILLA_NAS, "Max")
+F10::
+{
+	IfExist, %NAS%
+		ProgramShortcut(FILEZILLA_WINDOW, FILEZILLA_NAS, "Max")
+	Else
+		ProgramShortcut(FILEZILLA_WINDOW, FILEZILLA, "Max")
+	Return
+}
 
 
 ;@//  "à" & F10  ::  Filezilla
