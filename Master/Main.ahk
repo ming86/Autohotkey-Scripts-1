@@ -11,6 +11,7 @@ SetTitleMatchMode 2
 ; ------------------ System Tray ------------------
 Menu, TRAY, Icon, Icons/Master.ico ; Icon displayed in the system tray
 Menu, TRAY, Tip, Autohotkey ; text displayed when hover over the icon
+Menu, TRAY, Add, Reload the script, RLD
 ; --------------- end System Tray -----------------
 
 
@@ -96,6 +97,7 @@ NumpadEnter::MButton
 		Send {Alt}
 		Sleep 100
 		Send q
+		Return
 	}
 	; do nothing if on the desktop
 	Else IfWinActive, ahk_class WorkerW

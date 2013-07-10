@@ -9,19 +9,26 @@ Return
 
 Stop_:
 Run, %STOP_%
-return
+Return
 
 Sleep_:
 Run, %SLEEP_%
-return
+Return
 
 Reboot_:
 Run, %REBOOT_%
-return
+Return
 
 Hibernate_:
 Run, %HIBERNATE_%
-return
+Return
+
+
+
+; === Tray Menu ===
+RLD:
+Reload
+Return
 
 
 ; === File Explorer ===
