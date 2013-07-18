@@ -18,7 +18,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
 StartFolder = *D:\Vidéos
-FilesExt := "mkv, avi, mp4"
+FilesExt := "mkv, avi, mp4, ogm"
 
 FileSelectFolder, Folder, %StartFolder%, 0, Select the folder containing the episodes :
 
