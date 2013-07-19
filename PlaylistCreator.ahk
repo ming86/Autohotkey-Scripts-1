@@ -5,27 +5,26 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
-
 ; ####################################################
 ; ############### Playlist generation ################
 ; ####################################################
 ;
 ; generate a m3u file from a folder's content
-; for now, the folder content is not tested
 ;
-; NB : I use this to generate playlist for series, it's not really suited for music
 
+FileEncoding, UTF-8
 
+StartFolder = *D:\
+FilesExt := "mkv,avi,mp4,ogm,mp3,ogg"
 
-StartFolder = *D:\Vidéos
-FilesExt := "mkv, avi, mp4, ogm"
-
-FileSelectFolder, Folder, %StartFolder%, 0, Select the folder containing the episodes :
+FileSelectFolder, Folder, %StartFolder%, 0, Select the folder containing the elements :
+	IfEqual, ErrorLevel, 1
+		ExitApp
 
 loop, Parse, Folder,\
 	FolderName = %A_LoopField% ; we keep just the last folder name
 
-PlaylistPath = %Folder%\%FolderName%.m3u ; the playlist will be in the same folder as the files and have the same name as the folder
+PlaylistPath = %Folder%\%FolderName%.m3u8 ; the playlist will be in the same folder as the files and have the same name as the folder
 IfExist, %PlaylistPath%
 	FileDelete, %PlaylistPath%
 
