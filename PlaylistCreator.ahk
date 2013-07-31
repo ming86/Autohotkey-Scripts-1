@@ -9,7 +9,9 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; ############### Playlist generation ################
 ; ####################################################
 ;
-; generate a m3u file from a folder's content
+; generate a m3u8 file fron the content of a folder.
+; folders are not browsed recursively, only the files
+; directly in the folder selected are used
 ;
 
 FileEncoding, UTF-8

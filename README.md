@@ -9,6 +9,7 @@ Master script, the one that I launch on my computer startup. See [Master/readme]
 -
 Simple script to reboot the computer. 
 It needs a parameter when called :
+
 * --noconfirm : Reboot without asking for confirmation
 * --confirm : Ask for confirmation via a pop up
 
@@ -17,6 +18,7 @@ It needs a parameter when called :
 -
 Simple script to shutdown the computer.
 It needs a parameter when called :
+
 * --noconfirm : Shutdown without asking for confirmation
 * --confirm : Ask for confirmation via a pop up
 
@@ -24,6 +26,7 @@ It needs a parameter when called :
 -
 Simple script to suspend the computer.
 It needs a parameter when called :
+
 * --noconfirm : Suspend without asking for confirmation
 * --confirm : Ask for confirmation via a pop up
 

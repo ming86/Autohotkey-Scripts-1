@@ -27,7 +27,7 @@ SC029 & F1::Run, http://192.168.1.55:7557/tranz/web/
 	~Esc::DoublePress(0,"^{w}")
 
 	;@//  Double press "=" :: Ctrl+w (close tab)
-	=::DoublePress(0,"^{w}")	
+	~=::DoublePress(0,"^{w}")	
 
 	;@//  Double press "ù" :: Pin tab
 	~ù::DoublePress(1,"pinTab")

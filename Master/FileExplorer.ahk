@@ -58,4 +58,16 @@
 ;@//  Double Press + :: Auto Resize Columns (list view)
 ~NumpadAdd::DoublePress(0,"^{NumpadAdd}")
 
+
+;@//  Win + a :: Toggle navigation pane
+#a::
+{
+	Send !v
+	Sleep 100
+	Send n
+	Sleep 100
+	Send {Enter}
+	Return
+}
+
 #IfWinActive

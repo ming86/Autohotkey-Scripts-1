@@ -30,7 +30,7 @@ Menu, TRAY, Add, Reload the script, RLD
 
 ;Functions ta run periodically
 OnSaveCompileOrReload()
-SortFiles()
+;SortFiles()
 
 Return
 ; --- End auto execution
@@ -151,3 +151,6 @@ SC029::DoublePress(1,"ShowPowerMenu")
 
 ;@//  Ctrl + < :: Minimize current window 
 ^<::WinMinimize, A
+
+;@//  AppsKey :: Right Mouse Button
+AppsKey::RButton
