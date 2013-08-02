@@ -1,9 +1,9 @@
 Autohotkey Scripts
 =========
 
-[Master](Master)
+[Perso](Perso)
 -
-Master script, the one that I launch on my computer startup. See [Master/readme](Master/readme.md) and source code comments for details.
+Master script, the one that I launch on my personnal computer startup. See [Perso/readme](Perso/readme.md) and source code comments for details.
 
 [Reboot](reboot.ahk)
 -
