@@ -59,14 +59,16 @@
 ~NumpadAdd::DoublePress(0,"^{NumpadAdd}")
 
 
-;@//  Win + a :: Toggle navigation pane
-#a::
+;@//  Win + a :: Toggle navigation pane (Windows 8 only)
+#a::goto, %TNP%
+
+
+;@//  Win + z :: Toggle details pane (Windows 8 only)
+#z::
 {
 	Send !v
-	Sleep 100
-	Send n
-	Sleep 100
-	Send {Enter}
+	Sleep 50
+	Send d
 	Return
 }
 

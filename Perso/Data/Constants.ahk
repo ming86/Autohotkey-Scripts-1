@@ -5,8 +5,8 @@ FIREFOX 		= %A_ProgramFiles% (x86)\Mozilla Firefox\FireFox.exe
 FIREFOX_WINDOW 	= Mozilla Firefox ahk_class MozillaWindowClass
 
 
-;MAIL 		= %A_ProgramFiles% (x86)\Mozilla Thunderbird\thunderbird.exe
-;MAIL_WINDOW = Mozilla Thunderbird ahk_class MozillaWindowClass
+TMAIL 		= %A_ProgramFiles% (x86)\Mozilla Thunderbird\thunderbird.exe
+TMAIL_WINDOW = Mozilla Thunderbird ahk_class MozillaWindowClass
 
 MAIL = C:\Users\%A_UserName%\AppData\Local\Inky\inky.exe
 MAIL_WINDOW = Inky ahk_class Inky
@@ -85,7 +85,15 @@ P :=""
 ; Script Name (only used for display)
 SCRIPT_NAME = Master
 
-RELOAD_DELAY = 100000
+RELOAD_DELAY = 10000
 
 ; === Help() Vars ===
 TREEVIEW_SHORTCUT_LIST =
+
+
+
+; OS versions
+IfEqual, A_OSVersion, WIN_8
+TNP = tnp_W8
+Else IfEqual, A_OSVersion, WIN_7
+TNP = tnp_W7
