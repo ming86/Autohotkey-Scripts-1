@@ -25,11 +25,6 @@ Return
 
 
 
-; === Tray Menu ===
-RLD:
-Reload
-Return
-
 
 ; === File Explorer ===
 
@@ -40,6 +35,15 @@ Sleep, 10 ; Works better with a sleep between the two key
 Send {R}
 Return
 
+extract:
+Send {RButton} ; Right click
+Sleep, 10 ; Works better with a sleep between the two key
+Send 7
+Sleep, 10
+Send {e 3}
+Sleep, 10
+Send {Enter}
+Return 
 
 
 ; === Firefox ===

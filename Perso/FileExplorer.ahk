@@ -70,4 +70,7 @@
 	Return
 }
 
+;@//  Double Press ! :: extract archive with 7zip -> extract to "archive_name"
+~!::DoublePress(1,"extract")
+
 #IfWinActive
