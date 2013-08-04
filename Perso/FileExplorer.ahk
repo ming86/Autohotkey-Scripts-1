@@ -67,7 +67,7 @@
 #z::
 {
 	Send !v
-	Sleep 50
+	Sleep 30
 	Send d
 	Return
 }

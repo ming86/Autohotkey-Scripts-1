@@ -45,6 +45,28 @@ Sleep, 10
 Send {Enter}
 Return 
 
+; toggle navigation pane on Windows 8
+tnp_W8:
+Send !v
+Sleep 30
+Send n
+Sleep 30
+Send {Enter}
+Return
+
+; toggle navigation pane on Windows 7
+tnp_W7:
+Send {F3}
+Sleep 50
+Send {Tab}
+Sleep 50
+Send {Down}
+Sleep 50
+Send d
+Send {v 3}
+Send {Enter}
+Return
+
 
 ; === Firefox ===
 
@@ -77,26 +99,4 @@ unPinTab:
 Send {RButton} ; Right click
 Sleep, 10 ; Works better with a sleep between the two key
 Send r
-Return
-
-; toggle navigation pane on Windows 8
-tnp_W8:
-Send !v
-Sleep 50
-Send n
-Sleep 50
-Send {Enter}
-Return
-
-; toggle navigation pane on Windows 7
-tnp_W7:
-Send {F3}
-Sleep 100
-Send {Tab}
-Sleep 100
-Send {Down}
-Sleep 100
-Send d
-Send {v 3}
-Send {Enter}
 Return
