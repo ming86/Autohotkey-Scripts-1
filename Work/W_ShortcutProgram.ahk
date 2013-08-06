@@ -29,10 +29,10 @@ SC029 & ~F2::ProgramShortcut(CYGWIN_WINDOW, CYGWIN)
 
 
 ;@//  Numpad -  ::  Spotify
-; NumpadSub::
-; {
-; DetectHiddenWindows, On
-; ProgramShortcut(G_SPOTIFY_WINDOW, SPOTIFY)
-; DetectHiddenWindows, Off
-; Return
-; }
+NumpadSub::
+{
+DetectHiddenWindows, On
+ProgramShortcut(G_SPOTIFY_WINDOW, SPOTIFY)
+DetectHiddenWindows, Off
+Return
+}

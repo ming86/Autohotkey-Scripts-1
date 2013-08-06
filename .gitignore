@@ -5,7 +5,7 @@ TESTS
 *.exe
 *.wav
 *.lnk
-Work/Hotstrings.ahk
+Work/W_Hotstrings.ahk
 
 
 ############

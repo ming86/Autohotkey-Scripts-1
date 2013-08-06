@@ -9,6 +9,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; ################ Shutdown computer #################
 ; ####################################################
 
+param = 9 ; Shutdown (1) + Power down (8)
 
 IfEqual, 0, 1 ; one parameter passed to the script
 {
@@ -16,11 +17,11 @@ IfEqual, 0, 1 ; one parameter passed to the script
 	{
 		MsgBox, 4148, Extinction, Arreter le PC ?
 		IfMsgBox, Yes
-			Shutdown, 1
+			Shutdown, %param%
 	}
 	Else IfEqual, 1, --noconfirm
 	{
-		Shutdown, 1
+		Shutdown, %param%
 	}
 	Else
 		MsgBox, 4112, Error, Unknown parameter, must be "--noconfirm" or "--confirm".
