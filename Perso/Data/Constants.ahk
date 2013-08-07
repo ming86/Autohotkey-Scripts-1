@@ -1,11 +1,17 @@
 ﻿
 ; === Constants ===
 
-FIREFOX 		= %A_ProgramFiles% (x86)\Mozilla Firefox\FireFox.exe
+IfExist, %A_ProgramFiles% (x86)
+	PF = %A_ProgramFiles% (x86)
+Else 
+	PF = %A_ProgramFiles%
+
+
+FIREFOX 		= %PF%\Mozilla Firefox\FireFox.exe
 FIREFOX_WINDOW 	= Mozilla Firefox ahk_class MozillaWindowClass
 
 
-TMAIL 		= %A_ProgramFiles% (x86)\Mozilla Thunderbird\thunderbird.exe
+TMAIL 		= %PF%\Mozilla Thunderbird\thunderbird.exe
 TMAIL_WINDOW = Mozilla Thunderbird ahk_class MozillaWindowClass
 
 MAIL = C:\Users\%A_UserName%\AppData\Local\Inky\inky.exe
@@ -14,8 +20,8 @@ MAIL_FOLDER = C:\Users\%A_UserName%\AppData\Local\Inky\
 
 
 ; FileZilla with a defined profile (prefixed by "0" for custom entries)
-FILEZILLA_NAS 		= %A_ProgramFiles% (x86)\FileZilla FTP Client\filezilla.exe --site=0NAS_int
-FILEZILLA 			= %A_ProgramFiles% (x86)\FileZilla FTP Client\filezilla.exe
+FILEZILLA_NAS 		= %PF%\FileZilla FTP Client\filezilla.exe --site=0NAS_int
+FILEZILLA 			= %PF%\FileZilla FTP Client\filezilla.exe
 FILEZILLA_WINDOW 	= FileZilla ahk_class wxWindowClassNR
 
 
@@ -64,10 +70,10 @@ POGO 	= \\POGO\DL
 ; === File Paths ===
 
 ; Power management scripts path
-SLEEP_  	:= "..\sleep.exe --noconfirm"
-STOP_ 		:= "..\stop.exe --noconfirm"
-REBOOT_ 	:= "..\reboot.exe --noconfirm"
-HIBERNATE_ 	:= "..\hibernate.exe --noconfirm"
+SLEEP_  	:= "..\sleep.ahk --noconfirm"
+STOP_ 		:= "..\stop.ahk --noconfirm"
+REBOOT_ 	:= "..\reboot.ahk --noconfirm"
+HIBERNATE_ 	:= "..\hibernate.ahk --noconfirm"
 
 
 ; Ressources File Path

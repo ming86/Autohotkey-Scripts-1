@@ -21,7 +21,7 @@ F12::
 
 
 ;@//  Numpad Mult  ::  Text Editor
-;NumpadMult::ProgramShortcut(EDITOR_WINDOW, EDITOR, "Max")
+NumpadMult::ProgramShortcut(EDITOR_WINDOW, EDITOR, "Max")
 
 
 ;@//  ² + F2  ::  Cygwin
