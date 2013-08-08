@@ -9,7 +9,11 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 ; ################ Shutdown computer #################
 ; ####################################################
 
-param = 9 ; Shutdown (1) + Power down (8)
+IfEqual, A_OSVersion, WIN_7
+	param = 9 ; Shutdown (1) + Power down (8)
+else 
+	param = 1 ; Shutdown (1)
+
 
 IfEqual, 0, 1 ; one parameter passed to the script
 {
