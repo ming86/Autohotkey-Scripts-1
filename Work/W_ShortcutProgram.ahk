@@ -8,14 +8,7 @@ F1::ProgramShortcut(FIREFOX_WINDOW, FIREFOX, "Max")
 
 
 ;@//  F12  ::  Mail (Thunderbird)
-F12::
-{
-	DetectHiddenWindows, On 
-	ProgramShortcut(TMAIL_WINDOW, TMAIL,"Max")
-	DetectHiddenWindows, Off
-	Return
-}
-
+F12::ProgramShortcut(TMAIL_WINDOW, TMAIL,"Max")
 
 
 ;@// F10 :: Mail (Inky)
