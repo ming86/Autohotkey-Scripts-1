@@ -2,7 +2,7 @@
 
 
 ;@//  CapsLock :: Pause (Key used for displaying Find And Run Robot)
-Capslock::Send {Pause}
+Capslock::SendInput {Pause}
 
 
 ;@//  Numpad Enter :: Middle Click
@@ -25,13 +25,13 @@ NumpadEnter::MButton
 	; Kill Spotify, not just the window
 	IfWinActive, %G_SPOTIFY_WINDOW%
 	{
-		Send ^l
+		SendInput ^l
 		Sleep 150
-		Send {Tab}
+		SendInput {Tab}
 		Sleep 150
-		Send {Alt}
+		SendInput {Alt}
 		Sleep 150
-		Send q
+		SendInput q
 		Return
 	}
 	; do nothing if on the desktop
@@ -44,7 +44,7 @@ NumpadEnter::MButton
 	{
 		Return
 	}
-	Else Send !{F4}
+	Else SendInput !{F4}
 	Return
 }
 
@@ -71,9 +71,6 @@ F7::Media_Play_Pause
 ;@//  Double press F9 :: Mute Sound
 F9::DoublePress(0, "{Volume_Mute}")
 
-
-;@//  AltGr + H :: Show help window
-RAlt & h::Help(TREEVIEW_SHORTCUT_LIST)
 
 
 ;@//  Double Press Escape :: Ctrl + W (close tab)

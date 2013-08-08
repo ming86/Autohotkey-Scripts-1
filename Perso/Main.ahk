@@ -56,3 +56,6 @@ Return
 #Include Spotify.ahk
 #Include SublimeText2.ahk
 #Include Thunderbird.ahk
+
+;@//  AltGr + H :: Show help window
+RAlt & h::Help(TREEVIEW_SHORTCUT_LIST)

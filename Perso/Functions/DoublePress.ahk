@@ -17,6 +17,6 @@ DoublePress(ActionType,Action)
 	IfEqual, ActionType, 1
 		Gosub, %Action%
 	Else IfEqual, ActionType, 0
-		Send, %Action%
+		SendInput, %Action%
 	Return
 }

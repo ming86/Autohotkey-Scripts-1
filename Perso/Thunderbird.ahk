@@ -10,9 +10,9 @@
 		MsgBox, 4148, Mail - Corbeille, Vider la Corbeille ?
 		IfMsgBox, Yes
 		{
-			Send !f
-			Sleep 200
-			Send V
+			SendInput !f
+			Sleep 100
+			SendInput V
 		}
 		Return
 	}

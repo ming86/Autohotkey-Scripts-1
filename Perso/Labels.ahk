@@ -30,41 +30,41 @@ Return
 
 ; Show the properties window for the file selected AND under the mouse's pointer
 properties:
-Send {RButton} ; Right click
+SendInput {RButton} ; Right click
 Sleep, 10 ; Works better with a sleep between the two key
-Send {R}
+SendInput {R}
 Return
 
 extract:
-Send {RButton} ; Right click
+SendInput {RButton} ; Right click
 Sleep, 10 ; Works better with a sleep between the two key
-Send 7
+SendInput 7
 Sleep, 10
-Send {e 3}
+SendInput {e 3}
 Sleep, 10
-Send {Enter}
+SendInput {Enter}
 Return 
 
 ; toggle navigation pane on Windows 8
 tnp_W8:
-Send !v
+SendInput !v
 Sleep 30
-Send n
+SendInput n
 Sleep 30
-Send {Enter}
+SendInput {Enter}
 Return
 
 ; toggle navigation pane on Windows 7
 tnp_W7:
-Send {F3}
+SendInput {F3}
 Sleep 50
-Send {Tab}
+SendInput {Tab}
 Sleep 50
-Send {Down}
+SendInput {Down}
 Sleep 50
-Send d
-Send {v 3}
-Send {Enter}
+SendInput d
+SendInput {v 3}
+SendInput {Enter}
 Return
 
 
@@ -73,30 +73,30 @@ Return
 ; right click menu => view image => open it in a new tab (over an image)
 viewImage:
 ; When double key press
-Send {RButton} ; Right click
+SendInput {RButton} ; Right click
 Sleep, 10 ; Works better with a sleep between the two key
-Send ^{h} ; Ctrl + H => H for view image (french "shortcut") and Ctrl to open in a new tab
+SendInput ^{h} ; Ctrl + H => H for view image (french "shortcut") and Ctrl to open in a new tab
 Return
 
 
 ; right click menu => Add to transmission (firefox extension, over a magnet link or a torrent file)
 addTransmission:
-Send {RButton} ; Right click
+SendInput {RButton} ; Right click
 Sleep, 10 ; Works better with a sleep between the two key
-Send a
+SendInput a
 Return
 
 
 ; right click menu => Pin tab (over a tab)
 pinTab:
-Send {RButton} ; Right click
+SendInput {RButton} ; Right click
 Sleep, 10 ; Works better with a sleep between the two key
-Send p
+SendInput p
 Return
 
 ; right click menu => Unpin tab (over a tab)
 unPinTab:
-Send {RButton} ; Right click
+SendInput {RButton} ; Right click
 Sleep, 10 ; Works better with a sleep between the two key
-Send r
+SendInput r
 Return

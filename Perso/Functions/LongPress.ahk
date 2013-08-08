@@ -12,6 +12,6 @@ LongPress(Action)
 	If (A_TickCount - start) > 1000
 		Gosub, %Action%
 	Else
-		Send {%A_ThisHotkey%}
+		SendInput {%A_ThisHotkey%}
 	Return
 }

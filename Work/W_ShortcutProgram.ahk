@@ -17,6 +17,21 @@ F12::
 }
 
 
+
+;@// F10 :: Mail (Inky)
+F10::
+{
+	InkyState := ProgramShortcut(MAIL_WINDOW, MAIL,, MAIL_FOLDER)
+	IfEqual, InkyState, 3
+	{
+		WinWait, %MAIL_WINDOW%
+		WinMaximize
+	}
+	Return
+}
+
+
+
 ;F4::ProgramShortcut(MD_EDITOR_WINDOW, MD_EDITOR, "Max")
 
 

@@ -22,7 +22,7 @@
 		RegWrite, REG_DWORD, HKCU, Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced, HideFileExt, 1
 	}
 	;Sleep, 300
-	Send {F5}
+	SendInput {F5}
 	Return
 }
 
@@ -43,13 +43,13 @@
 		RegWrite, REG_DWORD, HKCU, Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced, Hidden, 1
 	}
 	;Sleep, 300
-	Send {F5}
+	SendInput {F5}
 	Return
 }
 
 
 ;@//  Numpad0 + Up :: Alt+Up (Parent folder)
-~Numpad0 & ~Up::Send !{Up}
+~Numpad0 & ~Up::SendInput !{Up}
 
 
 ;@//  Double Press * :: Display file properties
@@ -66,9 +66,9 @@
 ;@//  Win + z :: Toggle details pane (Windows 8 only)
 #z::
 {
-	Send !v
+	SendInput !v
 	Sleep 30
-	Send d
+	SendInput d
 	Return
 }
 

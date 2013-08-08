@@ -8,10 +8,10 @@
 	;@//   Ctrl + & :: View, Layout, Single
 	; (on a french azerty keyboard the original 
 	; 	shortcut change the keyboard layout, because it contain Alt+Shift)
-	^&::Send, !+1
+	^&::SendPlay, !+1
 
 	;@//   Ctrl + é :: View, Layout, columns:2
 	; (idem last shortcut)
-	^é::Send, !+2
+	^é::SendPlay, !+2
 
 #IfWinActive

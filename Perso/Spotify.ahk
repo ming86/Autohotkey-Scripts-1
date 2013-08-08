@@ -26,10 +26,10 @@ SpotifyControl(key)
 
 
 ;@//  Left :: previous song
-~Left::send ^{Left}
+~Left::SendInput ^{Left}
 
 ;@//  Right :: next song
-~Right::send ^{Right}
+~Right::SendInput ^{Right}
 
 
 
