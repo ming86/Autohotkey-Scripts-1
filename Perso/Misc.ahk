@@ -25,22 +25,13 @@ NumpadEnter::MButton
 	; Kill Spotify, not just the window
 	IfWinActive, %G_SPOTIFY_WINDOW%
 	{
-		SendInput ^l
-		Sleep 150
-		SendInput {Tab}
-		Sleep 150
-		SendInput {Alt}
-		Sleep 150
+		SendInput !f
+		Sleep 50
 		SendInput q
 		Return
 	}
-	; do nothing if on the desktop
-	Else IfWinActive, ahk_class WorkerW
-	{
-		Return
-	}
-	; do nothing if on the taskbar
-	Else IfWinActive, ahk_class Shell_TrayWnd
+	; do nothing if on the desktop or the taskbar
+	Else If WinActive("ahk_class WorkerW") or WinActive("ahk_class Shell_TrayWnd") or WinActive("ahk_class Progman")
 	{
 		Return
 	}

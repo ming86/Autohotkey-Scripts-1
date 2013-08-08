@@ -29,7 +29,7 @@ Return
 #Include ../Perso/Firefox.ahk
 #Include ../Perso/Thunderbird.ahk
 #Include ../Perso/SublimeText2.ahk
-
+#Include ../Perso/Spotify.ahk
 
 ; Functions folder
 #Include ../Perso/Functions/DoublePress.ahk

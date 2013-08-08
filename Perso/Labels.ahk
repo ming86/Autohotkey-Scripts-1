@@ -48,22 +48,26 @@ Return
 ; toggle navigation pane on Windows 8
 tnp_W8:
 SendInput !v
-Sleep 30
+Sleep, 30
 SendInput n
-Sleep 30
+Sleep, 30
 SendInput {Enter}
 Return
 
 ; toggle navigation pane on Windows 7
 tnp_W7:
 SendInput {F3}
-Sleep 50
+Sleep, 30
+SendInput, {Del} ; remove characters entered in the search field, not necessary
+Sleep, 30
 SendInput {Tab}
-Sleep 50
-SendInput {Down}
-Sleep 50
+Sleep, 30
+SendInput {Enter}
+Sleep, 30
 SendInput d
+Sleep, 30
 SendInput {v 3}
+Sleep, 30
 SendInput {Enter}
 Return
 

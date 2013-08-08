@@ -35,10 +35,15 @@ SC029 & F1::Run, http://192.168.1.55:7557/tranz/web/
 	;@// Double Press "$" :: Unpin Tab
 	~$::DoublePress(1,"unPinTab")
 
-	; ~Delete::
-	; {
-	; 	KeyWait, KeyName [, Options]
-	; }
+	;@//  Press "Delete" then "End" :: Ctrl+w (close tab)
+	~Delete::
+	{
+		KeyWait, End, D T0.5 	; wait 0.5 second for the End key to be pushed down 
+		If !ErrorLevel 		; if the key has been pushed before the time out
+			SendInput, ^w
+		Return
+
+	}
 
 
 #IfWinActive
