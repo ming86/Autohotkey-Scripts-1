@@ -9,7 +9,8 @@ SetTitleMatchMode 2
 
 
 ; ------------------ System Tray ------------------
-Menu, TRAY, Tip, Work
+Menu, TRAY, Tip, AHK Work
+Menu, TRAY, Icon, ../Perso/Icons/W.ico ; Icon displayed in the system tray
 ; --------------- end System Tray -----------------
 
 
@@ -35,4 +36,3 @@ Return
 #Include ../Perso/Functions/DoublePress.ahk
 #Include ../Perso/Functions/LongPress.ahk
 #Include ../Perso/Functions/ProgramShortcut.ahk
-

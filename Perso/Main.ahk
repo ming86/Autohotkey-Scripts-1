@@ -21,15 +21,12 @@ Menu, TRAY, Tip, Autohotkey ; text displayed when hover over the icon
 
 ; Data Management folder, must be in auto execution section
 #Include Data/Constants.ahk
-#Include Data/SortFilesData.ahk
-
 #Include Data/HelpData.ahk
 #Include Data/HotstringsData.ahk
 #Include Data/PowerMenu.ahk
 
 ;Functions ta run periodically
 OnSaveCompileOrReload()
-;SortFiles()
 Return
 
 ; --- End auto execution
