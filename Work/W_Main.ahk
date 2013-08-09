@@ -10,7 +10,7 @@ SetTitleMatchMode 2
 
 ; ------------------ System Tray ------------------
 Menu, TRAY, Tip, AHK Work
-Menu, TRAY, Icon, ../Perso/Icons/W.ico ; Icon displayed in the system tray
+Menu, TRAY, Icon, Icons/W.ico ; Icon displayed in the system tray
 ; --------------- end System Tray -----------------
 
 
