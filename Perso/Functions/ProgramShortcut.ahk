@@ -9,17 +9,14 @@
 
 ProgramShortcut(WinClassOrName, ProgramPath, MaxMinHide = "", WorkingDir = "")
 {
-	WinGet, old_win,,A
-
 	IfWinActive %WinClassOrName%
 	{
 		WinMinimize
-		WinActivate, %old_win%
 		Return "1"
 	}
 	Else IfWinExist %WinClassOrName%
 	{
-		WinActivate
+		WinRestore
 		WinMaximize
 		Return "2"
 	}

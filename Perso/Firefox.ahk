@@ -36,6 +36,13 @@ SC029 & F1::Run, http://192.168.1.55:7557/tranz/web/
 	~$::DoublePress(1,"unPinTab")
 
 
+	;@//  "Delete" + "End" :: Ctrl+Shift+t
+	~Delete & ~End::SendInput, ^+t
+	
+	;@//  "Delete" + "End" :: Ctrl + w
+	~End & ~PgDn::SendInput, ^w
+
+
 	; ;@//  Press "Delete" then "End" :: Ctrl+Shift+t
 	; ~Delete::
 	; {
@@ -44,9 +51,6 @@ SC029 & F1::Run, http://192.168.1.55:7557/tranz/web/
 	; 		SendInput, ^w
 	; 	Return
 	; }
-
-	~Delete & ~End::SendInput, ^+t
-	~End & ~PgDn::SendInput, ^w
 
 
 #IfWinActive
