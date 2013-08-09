@@ -74,6 +74,7 @@ SLEEP_  	:= "..\sleep.ahk --noconfirm"
 STOP_ 		:= "..\stop.ahk --noconfirm"
 REBOOT_ 	:= "..\reboot.ahk --noconfirm"
 HIBERNATE_ 	:= "..\hibernate.ahk --noconfirm"
+LOGOUT_		:= "..\logout.ahk --noconfirm"
 
 
 ; Ressources File Path

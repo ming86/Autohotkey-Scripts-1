@@ -23,7 +23,9 @@ Hibernate_:
 Run, %HIBERNATE_%
 Return
 
-
+Logout_:
+Run, %LOGOUT_%
+Return
 
 
 ; === File Explorer ===

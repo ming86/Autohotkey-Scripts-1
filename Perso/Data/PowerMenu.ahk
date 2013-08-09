@@ -15,3 +15,6 @@ Menu, PowerMenu, Icon, &Redemarrer, Icons/reboot.ico,, 32
 Menu, PowerMenu, Add  ; Separator line
 Menu, PowerMenu, Add, &Eteindre, Stop_
 Menu, PowerMenu, Icon, &Eteindre, Icons/stop.ico,, 32
+Menu, PowerMenu, Add  ; Separator line
+Menu, PowerMenu, Add, &Log Out, Logout_
+; Menu, PowerMenu, Icon, &Log Out, Icons/logout.ico,, 32
