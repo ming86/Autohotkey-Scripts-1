@@ -40,7 +40,6 @@ Return
 #Include Functions/LongPress.ahk
 #Include Functions/OnSaveCompileOrReload.ahk
 #Include Functions/ProgramShortcut.ahk
-#Include Functions/SortFiles.ahk
 
 
 ; Hotkeys and Hotstrings files
