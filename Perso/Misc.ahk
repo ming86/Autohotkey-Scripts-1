@@ -60,7 +60,7 @@ F7::Media_Play_Pause
 
 
 ;@//  Double press F9 :: Mute Sound
-F9::DoublePress(0, "{Volume_Mute}")
+~F9::DoublePress(0, "{Volume_Mute}")
 
 
 
@@ -73,7 +73,7 @@ SC029::DoublePress(1,"ShowPowerMenu")
 
 
 ;@//  Ctrl + < :: Minimize current window 
-^<::WinMinimize, A
+; ^<::WinMinimize, A
 
 ;@//  AppsKey :: Right Mouse Button
 AppsKey::RButton

@@ -53,7 +53,7 @@
 
 
 ;@//  Double Press * :: Display file properties
-~*::DoublePress(1,"properties")
+; ~*::DoublePress(1,%PROPERTIES%)
 
 ;@//  Double Press + :: Auto Resize Columns (list view)
 ~NumpadAdd::DoublePress(0,"^{NumpadAdd}")

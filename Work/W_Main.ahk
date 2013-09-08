@@ -36,3 +36,16 @@ Return
 #Include ../Perso/Functions/DoublePress.ahk
 #Include ../Perso/Functions/LongPress.ahk
 #Include ../Perso/Functions/ProgramShortcut.ahk
+
+; Insert::return
+
+; Insert::SendRaw, %Clipboard%
+
+
+#IfWinActive Qt Creator ahk_class Qt5QWindowIcon
+
+~Home::DoublePress(1,"clean")
+
+~End::DoublePress(0,"^{r}")
+
+#IfWinActive

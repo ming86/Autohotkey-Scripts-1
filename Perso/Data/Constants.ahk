@@ -98,9 +98,14 @@ RELOAD_DELAY = 10000
 TREEVIEW_SHORTCUT_LIST =
 
 
-
 ; OS versions
 IfEqual, A_OSVersion, WIN_8
-TNP = tnp_W8
+{
+	TNP = tnp_W8
+	PROPERTIES = properties_W8
+}
 Else IfEqual, A_OSVersion, WIN_7
-TNP = tnp_W7
+{
+	TNP = tnp_W7
+	PROPERTIES = properties_W7
+}

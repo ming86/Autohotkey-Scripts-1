@@ -31,11 +31,19 @@ Return
 ; === File Explorer ===
 
 ; Show the properties window for the file selected AND under the mouse's pointer
-properties:
+properties_W8:
 SendInput {RButton} ; Right click
 Sleep, 10 ; Works better with a sleep between the two key
 SendInput {R}
 Return
+
+properties_W7:
+; SendInput {RButton} ; Right click
+; Sleep, 10 ; Works better with a sleep between the two key
+; SendInput {Up}
+; SendInput {Enter}
+Return
+
 
 extract:
 SendInput {RButton} ; Right click
@@ -105,4 +113,19 @@ unPinTab:
 SendInput {RButton} ; Right click
 Sleep, 50 ; Works better with a sleep between the two key
 SendInput r
+Return
+
+
+clean:
+SendInput, !c
+sleep, 10
+SendInput, {Down 8}
+sleep, 10
+SendInput, {Enter}
+sleep, 3000
+SendInput, ^r
+Return
+
+build:
+SendInput, ^r
 Return
