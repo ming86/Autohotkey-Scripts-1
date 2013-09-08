@@ -96,13 +96,13 @@ Return
 ; right click menu => Pin tab (over a tab)
 pinTab:
 SendInput {RButton} ; Right click
-Sleep, 10 ; Works better with a sleep between the two key
+Sleep, 50 ; Works better with a sleep between the two key
 SendInput p
 Return
 
 ; right click menu => Unpin tab (over a tab)
 unPinTab:
 SendInput {RButton} ; Right click
-Sleep, 10 ; Works better with a sleep between the two key
+Sleep, 50 ; Works better with a sleep between the two key
 SendInput r
 Return

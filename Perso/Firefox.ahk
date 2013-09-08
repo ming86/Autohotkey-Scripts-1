@@ -52,5 +52,6 @@ SC029 & F1::Run, http://192.168.1.55:7557/tranz/web/
 	; 	Return
 	; }
 
+AppsKey::MButton
 
 #IfWinActive
